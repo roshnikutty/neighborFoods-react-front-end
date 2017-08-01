@@ -5,11 +5,15 @@ import AddBuyer from '../components/AddBuyer';
 const initialState = {
     meals: [],
     buyers: [],
-    form: [AddSeller, AddBuyer],
+    forms: [AddSeller, AddBuyer],
     isFetching: false
 };
 
 export const neighborFoodsReducer = (state = initialState, action) => {
+    if (action.type === actions.LOGIN_FINISHED) {
+        return Object.assign({}, state, {token: action.payload})
+    }
+
     if (action.type === actions.ADD_MEAL_FINISHED) {
         return Object.assign({}, state, {
             meals: state.meals.concat(action.mealInput)
@@ -26,10 +30,6 @@ export const neighborFoodsReducer = (state = initialState, action) => {
             }
         })
         return Object.assign({}, state, dummyState);
-    }
-
-    if (action.type === actions.LOGIN_FINISHED) {
-        return Object.assign({}, state, {token: action.payload})
     }
 
 
