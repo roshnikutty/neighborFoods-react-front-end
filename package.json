@@ -1,0 +1,34 @@
+{
+  "name": "neighborFoods",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-redux": "^5.0.2",
+    "react-scripts": "0.8.5"
+  },
+  "dependencies": {
+    "history": "^4.6.3",
+    "js-cookie": "^2.1.4",
+    "jsonwebtoken": "^7.4.1",
+    "jwt-simple": "^0.5.1",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "^2.2.1",
+    "passport-local": "^1.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router-dom": "^4.0.0",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-form": "^7.0.3",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
