@@ -28,9 +28,6 @@ const mapDispatchToProps = (dispatch) => ({
     gotoSignup: () => dispatch(push('/signup')) 
 })
 
-// const mapDispatchToProps = (dispatch) => ({
-//     gotoSignup: () => dispatch(push('/signup')) 
-// })
 
 Home = connect(null, mapDispatchToProps)(Home)
 

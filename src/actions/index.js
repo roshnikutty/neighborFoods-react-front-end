@@ -1,5 +1,4 @@
-import { dispatch } from 'react-redux'
-
+import { dispatch } from 'react-redux';
 export const LOGIN_STARTED = 'LOGIN_STARTED';
 export const loginStarted = () => ({
     type: LOGIN_STARTED
@@ -109,7 +108,7 @@ export const updateMeal = (mealInput, mealId) => {
             },
             body: JSON.stringify(mealInput)
         }).then(
-            dispatch(updateMealFinished(), res)
+            dispatch(updateMealFinished())
             )
             .catch(err => console.log(err));
     }
@@ -138,7 +137,7 @@ export const deleteMeal = mealId => {
                 'Content-Type': 'application/json'
             },
         }).then(
-            dispatch(deleteMealFinished(), res)
+            dispatch(deleteMealFinished())
             )
             .catch(err => console.log(err));
     }
@@ -199,7 +198,7 @@ export const updateBuyer = (buyerInput, buyerId) => {
             body: JSON.stringify(buyerInput)
 
         }).then(
-            dispatch(updateBuyerFinished, res)
+            dispatch(updateBuyerFinished)
             ).catch(err => console.log(err));
     }
 };

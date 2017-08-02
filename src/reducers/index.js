@@ -1,11 +1,11 @@
 import * as actions from '../actions';
-import AddSeller from '../components/AddSeller';
-import AddBuyer from '../components/AddBuyer';
+import AddSellerPage from '../components/AddSellerPage';
+import AddBuyerPage from '../components/AddBuyerPage';
 
 const initialState = {
     meals: [],
     buyers: [],
-    forms: [AddSeller, AddBuyer],
+    forms: [AddSellerPage, AddBuyerPage],
     isFetching: false
 };
 
