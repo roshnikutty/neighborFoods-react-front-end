@@ -155,7 +155,7 @@ export const addBuyerFinished = () => ({
     type: ADD_BUYER_FINISHED
 });
 
-export const addBuyer = buyerinfo => {
+export const addBuyer = buyerInput => {
     return function (dispatch) {
         dispatch(addBuyerStarted());
         let token = document.cookie.replace("token=", '');
@@ -165,7 +165,7 @@ export const addBuyer = buyerinfo => {
                 'Authorization': `JWT ${token}`,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(buyerinfo)
+            body: JSON.stringify(buyerInput)
         })
             .then(function (res) {
                 dispatch(addBuyerFinished(), res)
@@ -186,7 +186,7 @@ export const updateBuyerFinished = () => ({
     type: UPDATE_BUYER_FINISHED
 });
 
-export const updateBuyer = (buyerinfo, buyerId) => {
+export const updateBuyer = (buyerInput, buyerId) => {
     return function (dispatch) {
         dispatch(updateBuyerStarted());
         let token = document.cookie.replace("token=", '');
@@ -196,7 +196,7 @@ export const updateBuyer = (buyerinfo, buyerId) => {
                 'Authorization': `JWT ${token}`,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(buyerinfo)
+            body: JSON.stringify(buyerInput)
 
         }).then(
             dispatch(updateBuyerFinished, res)
@@ -215,7 +215,7 @@ export const deleteBuyerFinished = () => ({
     type: DELETE_BUYER_FINISHED
 });
 
-export const deleteBuyer = (buyerinfo, buyerId) => {
+export const deleteBuyer = (buyerId) => {
     return function (dispatch) {
         dispatch(deleteBuyerStarted());
         let token = document.cookie.replace("token=", '');
