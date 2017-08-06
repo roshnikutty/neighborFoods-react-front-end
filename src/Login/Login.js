@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { login } from '../actions';
+import { login } from './action';
 import { Link } from 'react-router-dom';
 import { push } from 'react-router-redux';
-import ViewExistingMeals from './ViewExistingMeals';
-import './app.css';
+
 
 const LogIn = (props) => {
     return (
@@ -21,7 +20,7 @@ const LogIn = (props) => {
 const mapDispatchToProps = (dispatch) => ({
     login: () => {
         dispatch(login());
-        dispatch(push('/viewmeals'));
+        dispatch(push('/meals'));
     }
 })
 export default connect(null, mapDispatchToProps)(LogIn)

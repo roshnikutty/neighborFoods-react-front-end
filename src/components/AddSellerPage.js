@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector, reset } from 'redux-form';
 import { ConnectedRouter, push } from 'react-router-redux';
 import { Route, Link, Switch } from 'react-router-dom';
-import './app.css';
+
 
 const validate = values => {
     const errors = {}

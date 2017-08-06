@@ -1,12 +1,11 @@
 import React from 'react';
-import './app.css';
 import { connect } from 'react-redux';
-import { getMeals, addMeal } from '../actions';
+import { getMeals } from './action';
 import { Route, Link, Switch } from 'react-router-dom';
 import { ConnectedRouter, push } from 'react-router-redux';
 import { history } from '../store';
-import { AddBuyerPage } from './AddBuyerPage';
-import { AddSellerPage } from './AddSellerPage';
+//import { AddBuyerPage } from './AddBuyerPage';
+//import { AddSellerPage } from './AddSellerPage';
 
 const GetMeals = (props) => {
 
@@ -50,30 +49,18 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-GetMeals = connect(null, mapDispatchToProps)(GetMeals);
-
 //=============================================================
 
-const ViewExistingMeals = (props) => {
-    <ConnectedRouter history={history}>
-        <Switch>
-            <Route
-                exact
-                path="/viewmeals"
-                component={GetMeals}>
-            </Route>
-            <Route
-                exact
-                path="/addbuyer"
-                component={AddBuyerPage}>
-            </Route>
-            <Route
-                exact
-                path="/addseller"
-                component={AddSellerPage}>
-            </Route>
-        </Switch>
-    </ConnectedRouter>
+class Meals extends React.Component {
+    componentWillMount() {
+        this.props.dispatch(getMeals())
+    }
+
+    render() {
+        return (<div className="black-box">
+            I HAVE MEALS YAY!
+        </div>)
+    }
 }
 
-export default connect()(ViewExistingMeals);
+export default connect()(Meals);

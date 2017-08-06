@@ -4,9 +4,6 @@ import { Field, reduxForm, formValueSelector, reset } from 'redux-form';
 import { Route, Link, Switch } from 'react-router-dom';
 import { ConnectedRouter, push } from 'react-router-redux'
 import { history } from '../store';
-import ViewExistingMeals from './ViewExistingMeals';
-
-import './app.css';
 
 const validate = values => {
     const errors = {}
@@ -75,18 +72,7 @@ AddBuyer = connect(state => {
 //=====================================================================================================
 const AddBuyerPage = (props) => {
     return (
-        <ConnectedRouter history={history}>
-            <Switch>
-                <Route
-                    exact path="/addbuyer"
-                    component={AddBuyer}
-                />
-                <Route
-                    exact path="/viewmeals"
-                    component={ViewExistingMeals}
-                />
-            </ Switch>
-        </ ConnectedRouter>
+        <div/>
     );
 }
 
