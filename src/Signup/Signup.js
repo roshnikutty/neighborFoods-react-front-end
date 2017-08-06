@@ -34,11 +34,13 @@ const SignUp = (props) => {
     );
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    signup: (attributes) => {
-        console.log(`here logging before dispatching signup: ${attributes}`);
-        dispatch(signup(attributes))
+const mapDispatchToProps = (dispatch) => {
+    // console.log(`here logging before dispatching signup: ${attributes}`);
+    return {
+        signup: (attributes) => {
+            dispatch(signup(attributes))
+        }
     }
-})
+}
 
 export default connect(null, mapDispatchToProps)(SignUp)

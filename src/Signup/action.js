@@ -13,14 +13,15 @@ export const signupFinished = (user) => ({
 
 export const signup = (attributes) => (dispatch) => {
     dispatch(signupStarted())
-    console.log("Logging from inside signup action function: ${attributes}");
+    console.log("ATTRIBUTES ", attributes);
     fetch('http://localhost:8080/users',
         {
             method: 'post',
-            body: JSON.stringify(attributes),
-            headers: new Headers({
+            body: JSON.stringify({username:attributes.username}),
+            headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
-            }),
+            },
             mode: 'no-cors'
 
         }).then(
