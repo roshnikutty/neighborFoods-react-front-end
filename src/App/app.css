@@ -36,12 +36,18 @@ h2 {
 .signup, .login {
     display: inline-block;
     max-width: 500px;
-    margin-left: 35%;
-   margin-top:13%;
-
+    margin-left: 11;
+    margin-top:7%;
+}
+#signup-form, #login-form{
+    max-width: 600px;
+    margin: auto;
+    padding-left: 15%;
+    padding-top: 7.5%;
 }
 .signup-login-button{
     margin-left:34px;
+    margin-bottom: 12px;
 }
 input.blank{
     text-align: center;
@@ -86,6 +92,9 @@ button:hover{
     text-align: center;
     width: 100%;
 }
+input:required {         /*fix for Firefox showing red border around required fields*/
+    box-shadow:none;
+}
 #new-meal-style, #new-buyer-style {
     padding: 20px;
     margin: auto;
@@ -95,19 +104,23 @@ button:hover{
     color: #c78181;
     font-size: 0.8em;
 }
-.landing-button {
+.landing-button, .page-login-signup-button {
     float: right;
     max-width: 90px;
     height: auto;
     padding: 5px;
-    margin-right:5px;
-    margin-left: 5px;    
+       
 }
-
+.landing-button{
+    margin:0px 5px;
+}
 .login-style {
     background-color: #cacdce;
     color:#ff5722;
     margin-right: 12px;
+}
+.page-login-signup-button{
+    margin: 0px 40px 0px 15px;
 }
 
 .post-dishes {
@@ -120,5 +133,5 @@ button:hover{
     height: auto;
 }
 .form-button{
-    margin: 3% 29%;
+    margin: 3% 29% 0 38%;
 }

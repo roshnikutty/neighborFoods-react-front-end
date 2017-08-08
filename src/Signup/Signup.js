@@ -20,7 +20,10 @@ const SignUp = (props) => {
     return (
         <div>
             <h1><Link to="/">NeighborFoods</Link></h1>
-            <form onSubmit={handleSubmit}>
+            <header>
+                <button className="page-login-signup-button login-style" onClick={props.gotoLogin} >Log In</button>
+            </header>
+            <form onSubmit={handleSubmit} id="signup-form">
                 <div className="black-box signup">
                     <p><input type="text" ref={(input) => username = input} className="blank" placeholder="User ID" size="35" required /></p>
                     <p><input type="password" ref={(input) => password = input} className="blank" placeholder="Password" size="35" required /></p>
@@ -34,13 +37,9 @@ const SignUp = (props) => {
     );
 }
 
-const mapDispatchToProps = (dispatch) => {
-    // console.log(`here logging before dispatching signup: ${attributes}`);
-    return {
-        signup: (attributes) => {
-            dispatch(signup(attributes))
-        }
-    }
-}
+const mapDispatchToProps = (dispatch) => ({
+    signup: (attributes) => { dispatch(signup(attributes)) },
+    gotoLogin: () => dispatch(push('/login'))
+})
 
 export default connect(null, mapDispatchToProps)(SignUp)
