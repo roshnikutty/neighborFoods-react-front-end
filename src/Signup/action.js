@@ -17,20 +17,15 @@ export const signup = (attributes) => (dispatch) => {
     fetch('http://localhost:8080/users',
         {
             method: 'post',
-            body: JSON.stringify({username:attributes.username}),
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            mode: 'no-cors'
+            body: JSON.stringify(attributes),
 
         }).then(
         (res) => {
-            dispatch(signupFinished(res.body)
-            )
-                .catch(err => console.log(err))
-        }
-        );
-
-
+            dispatch(signupFinished(res.body))
+            
+        }).catch(err => console.log(err));
 }

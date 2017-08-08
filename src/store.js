@@ -1,14 +1,13 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-// import { neighborFoodsReducer } from './reducers';
-import mealReducer from './Meals/reducer';
-import mealAddUpdateDeleteReducer from './components/sellerReducer';
-import buyerAddUpdateDeleteReducer from './components/buyerReducer';
-import loginReducer from './Login/reducer';
-import { routerMiddleware, routerReducer } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
+import { routerMiddleware, routerReducer } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import mealReducer from './Meals/reducer';
+import loginReducer from './Login/reducer';
+import newMealReducer from './Newmeal/reducer';
+// import { neighborFoodsReducer } from './reducers';
 
 export const history = createHistory();
 const logger = createLogger();
@@ -17,8 +16,7 @@ const reducer = combineReducers(
         // neighborFoodsReducer,
         mealReducer,
         loginReducer,
-        mealAddUpdateDeleteReducer,
-        buyerAddUpdateDeleteReducer,
+        form: newMealReducer,
         routing: routerReducer
     }
 )

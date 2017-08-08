@@ -15,7 +15,7 @@ const SignUp = (props) => {
             password: password.value,
             firstName: firstName.value,
             lastName: lastName.value
-        })
+        });
     }
     return (
         <div>

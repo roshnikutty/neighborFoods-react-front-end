@@ -7,7 +7,8 @@ import { history } from '../store'
 import SignUp from '../Signup';
 import LogIn from '../Login';
 import Home from '../Home';
-import Meals from '../Meals'
+import Meals from '../Meals';
+import Newmeal from '../Newmeal';
 
 import './app.css';
 
@@ -33,6 +34,11 @@ const App = (props) => {
                     exact
                     path="/meals"
                     component={Meals}>
+                </Route>
+                <Route
+                    exact
+                    path="/meals/new"
+                    component={Newmeal}>
                 </Route>
             </ Switch>
 
