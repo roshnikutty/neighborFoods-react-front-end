@@ -75,7 +75,26 @@ button:hover{
     outline: none;
     outline-style: none;
 }
-
+.large-line-height {
+    line-height: 286%;
+}
+.each-input{
+    padding-left: 29px;
+    padding-right: 40px;
+}
+.each-input>input.blank{
+    text-align: center;
+    width: 100%;
+}
+#new-meal-style, #new-buyer-style {
+    padding: 20px;
+    margin: auto;
+    max-width: 50%;
+}
+.required{
+    color: #c78181;
+    font-size: 0.8em;
+}
 .landing-button {
     float: right;
     max-width: 90px;
@@ -99,4 +118,7 @@ button:hover{
     float: right;
     max-width: 100px;
     height: auto;
+}
+.form-button{
+    margin: 3% 29%;
 }

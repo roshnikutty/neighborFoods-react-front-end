@@ -44,28 +44,26 @@ const validate = values => {
 }
 let Newmeal = (props) => {
     const renderField = ({ input, label, type, meta: { touched, error } }) => (
-        <div>
-            <label>{label}</label>
-            <div>
-                <input {...input} placeholder={label} type={type} />
+        <div className="each-input">
+                <input {...input} placeholder={label} type={type} className="blank large-line-height" size="35"/>
                 {touched && (error && <span>{error}</span>)}
-            </div>
         </div>
     )
     const { handleSubmit, pristine, reset, submitting, createMeal } = props;
     return (
         <div>
             <h1><Link to="/">NeighborFoods</Link></h1>
-            <form className="black-box" onSubmit={handleSubmit(createMeal)} >
-                <Field name="seller_name" className="blank" component={renderField} type="text" label="Seller's name" />
-                <Field name="sell_dish" className="blank" component={renderField} type="text" label="Dish" />
-                <Field name="sell_cuisine" className="blank" component={renderField} type="text" label="Cuisine" />
-                <Field name="sell_date" className="blank" component={renderField} type="text" label="Date as mm/dd/yyyy" />
-                <Field name="sell_plate_count" className="blank" component={renderField} type="number" label="Number of plates" />
-                $<Field name="sell_plate_cost" className="blank" component={renderField} type="number" label="Price of each plate" />
-                <Field name="sell_allergens" className="blank" component={renderField} type="text" label="Nuts/dairy/eggs/gluten/other/none" />
-                <Field name="sell_email_address" className="blank" component={renderField} type="email" label="Email address" size="35" />
-                <button type="submit" disabled={pristine || submitting}>Post this</button>
+            <form className="black-box" onSubmit={handleSubmit(createMeal)} id="new-meal-style">
+                <Field name="seller_name" component={renderField} type="text" label="Seller's name   *" />
+                <Field name="sell_dish" component={renderField} type="text" label="Dish   *" />
+                <Field name="sell_cuisine" component={renderField} type="text" label="Cuisine" />
+                <Field name="sell_date" component={renderField} type="text" label="Date as mm/dd/yyyy" />
+                <Field name="sell_plate_count" component={renderField} type="number" label="Number of plates   *" />
+                <Field name="sell_plate_cost" component={renderField} type="number" label="$ for a plate   *" />
+                <Field name="sell_allergens" component={renderField} type="text" label="Nuts/dairy/eggs/gluten/other/none   *" />
+                <Field name="sell_email_address" component={renderField} type="email" label="Email address   *" size="35" />
+                <button className = "form-button" type="submit" disabled={pristine || submitting}>Post this</button>
+                <div className="required">* is required</div>
             </form >
         </div>
     );

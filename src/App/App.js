@@ -9,6 +9,7 @@ import LogIn from '../Login';
 import Home from '../Home';
 import Meals from '../Meals';
 import Newmeal from '../Newmeal';
+import Newbuyer from '../Newbuyer';
 
 import './app.css';
 
@@ -39,6 +40,11 @@ const App = (props) => {
                     exact
                     path="/meals/new"
                     component={Newmeal}>
+                </Route>
+                <Route
+                    exact
+                    path="/buyers/new"
+                    component={Newbuyer}>
                 </Route>
             </ Switch>
 

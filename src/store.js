@@ -7,6 +7,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import mealReducer from './Meals/reducer';
 import loginReducer from './Login/reducer';
 import newMealReducer from './Newmeal/reducer';
+import newBuyerReducer from './Newbuyer/reducer';
 // import { neighborFoodsReducer } from './reducers';
 
 export const history = createHistory();
@@ -16,7 +17,7 @@ const reducer = combineReducers(
         // neighborFoodsReducer,
         mealReducer,
         loginReducer,
-        form: newMealReducer,
+        form: [newMealReducer, newBuyerReducer],
         routing: routerReducer
     }
 )
