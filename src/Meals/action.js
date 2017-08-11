@@ -11,24 +11,23 @@ export const getMealsFinished = (meals) => ({
 
 export const getMeals = () => {
     //Thunk function
+    let token = window.localStorage.getItem('token');
     return function (dispatch) {
         dispatch(getMealsStarted())
         //GET request to the API
-        let token = document.cookie.replace("token=", '');
-        fetch('/meals', {
-            method: 'get',
+        fetch('http://localhost:8080/meals', {
+            method: 'GET',
             headers: {
                 'Authorization': `JWT ${token}`,
                 'Content-Type': 'application/json'
             }
-        })
-            .then(function (res) {
-                // TODO: Fix when connected to backend
-                dispatch(getMealsFinished([
-                    {name: 'I am a meal'}
-                ]))
-                return res
-            })
+        }).then(res => {
+            return res.json()
+        }).then(res => {
+            console.log(res);
+            dispatch(getMealsFinished(res))
+            // return res
+        }).catch(err => console.log(`error getting meals: ${err}`))
         // .catch((err) => (dispatch(getMealsFailed(), err)))
     }
 };

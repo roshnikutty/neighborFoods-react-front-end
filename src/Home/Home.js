@@ -7,9 +7,9 @@ import Intro from './Intro'
 const Home = (props) => (
     <div className="app">
         <header>
+            <h1><Link to="/">NeighborFoods</Link></h1>
             <button className="landing-button login-style" onClick={props.gotoLogin} >Log In</button>
             <button className="landing-button" onClick={props.gotoSignup}>Sign Up</button>
-            <h1><Link to="/">NeighborFoods</Link></h1>
         </header>
         <main>
             <Intro />

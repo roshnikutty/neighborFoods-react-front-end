@@ -6,7 +6,9 @@ const initialState = {
 }
 
 const CREATE_MEAL_FINISHED = (state, action) => {
-    return Object.assign({}, state, {meals: action.payload})
+    return Object.assign({}, state, {
+        meals: [...state.meals, action.payload]
+    })
 }
 
 export default createReducer(initialState, {

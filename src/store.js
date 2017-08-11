@@ -6,9 +6,8 @@ import { createLogger } from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import mealReducer from './Meals/reducer';
 import loginReducer from './Login/reducer';
-import newMealReducer from './Newmeal/reducer';
-import newBuyerReducer from './Newbuyer/reducer';
 // import { neighborFoodsReducer } from './reducers';
+import {reducer as formReducer} from 'redux-form'; 
 
 export const history = createHistory();
 const logger = createLogger();
@@ -17,7 +16,7 @@ const reducer = combineReducers(
         // neighborFoodsReducer,
         mealReducer,
         loginReducer,
-        form: [newMealReducer, newBuyerReducer],
+        form: formReducer,
         routing: routerReducer
     }
 )

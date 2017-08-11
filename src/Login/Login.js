@@ -33,7 +33,10 @@ const LogIn = (props) => {
     );
 }
 const mapDispatchToProps = (dispatch) => ({
-    login: (attributes) => {dispatch(login(attributes))},
+    login: (attributes) => {
+        console.log("mapDispatchToProps logging out creds", attributes);
+        dispatch(login(attributes));
+    },
     gotoSignup: () => dispatch(push('/signup'))
 })
 export default connect(null, mapDispatchToProps)(LogIn)

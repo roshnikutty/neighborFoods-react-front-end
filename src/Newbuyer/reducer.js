@@ -6,7 +6,9 @@ const initialState = {
 }
 
 const CREATE_BUYER_FINISHED = (state, action) => {
-    return Object.assign({}, state, {buyers: action.payload})
+    return Object.assign({}, state, {
+            buyers: [...state.buyer, action.payload]
+    })
 }
 
 export default createReducer(initialState, {

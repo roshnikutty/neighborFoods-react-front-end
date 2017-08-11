@@ -25,29 +25,25 @@ const validate = values => {
     }
     return errors;
 }
+const renderField = ({ input, label, type, meta: { touched, error } }) => (
+    <div className="each-input">
+        <input {...input} placeholder={label} type={type} className="blank large-line-height" />
+        {touched && (error && <span>{error}</span>)}
+    </div>
+)
 
 let Newbuyer = (props) => {
-    const renderField = ({ input, label, type, meta: { touched, error } }) => (
-        <div className="each-input">
-            <input {...input} placeholder={label} type={type} className="blank large-line-height" />
-            {touched && (error && <span>{error}</span>)}
-        </div>
-    )
     const { handleSubmit, pristine, reset, submitting } = props;
 
-    const handleChange = (e) => {
-        e.preventDefault();
-        console.log("field value", e.target.value);
-    }
     return (
         <div>
             <h1><Link to="/">NeighborFoods</Link></h1>
             <form className="black-box" onSubmit={handleSubmit(createBuyer)} id="new-buyer-style">
-                <Field name="buyer_name" onChange={handleChange} className="blank" component={renderField} type="text" label="Buyer's name   *" />
-                <Field name="buy_date" onChange={handleChange} className="blank" component={renderField} type="text" label="Date as mm/dd/yyyy" />
-                <Field name="buy_plate_count" onChange={handleChange} className="blank" component={renderField} type="number" label="Number of plates   *" />
-                <Field name="buy_email_address" onChange={handleChange} className="blank" component={renderField} type="email" label="Email address   *" />
-                <button className="form-button" onChange={handleChange} type="submit" disabled={pristine || submitting}>Get this</button>
+                <Field name="buyer_name" className="blank" component={renderField} type="text" label="Buyer's name   *" />
+                <Field name="buy_date" className="blank" component={renderField} type="text" label="Date as mm/dd/yyyy" />
+                <Field name="buy_plate_count" className="blank" component={renderField} type="number" label="Number of plates   *" />
+                <Field name="buy_email_address" className="blank" component={renderField} type="email" label="Email address   *" />
+                <button className="form-button" type="submit" disabled={pristine || submitting}>Get this</button>
                 <div className="required">* is required</div>
             </form >
             <button className="landing-button form-button" onClick={props.searchMoreMeals}>Search meals</button>

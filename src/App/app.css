@@ -123,15 +123,33 @@ input:required {         /*fix for Firefox showing red border around required fi
     margin: 0px 40px 0px 15px;
 }
 
-.post-dishes {
-    background-color:  #788b91;
-    color: white;
-    margin-top: 10px;
-    margin-right: 20px;
-    float: right;
-    max-width: 100px;
-    height: auto;
-}
 .form-button{
     margin: 3% 29% 0 38%;
+}
+.meal-area {
+    margin: auto;
+    padding: 5%;
+    margin-top: 54px;
+}
+.meal-item {
+    list-style-type: none;
+    margin:auto;
+    width: 70%;
+    margin-top:10px;
+    padding-right: 20px;
+    overflow-x: scroll;
+}
+
+.buy-button {
+    position: relative;
+    bottom:50px;
+    right: 50px;
+}
+.post-dishes{
+    margin-right: 30px;
+}
+
+strong {
+    color: #ff5722;
+    margin-right: 10px;
 }
