@@ -42,17 +42,18 @@ const validate = values => {
     }
     return errors;
 }
+const renderField = ({ input, label, type, meta: { touched, error } }) => (
+    <div className="each-input">
+        <input {...input} placeholder={label} type={type} className="blank large-line-height" size="35" />
+        {touched && (error && <span>{error}</span>)}
+    </div>
+)
 let Newmeal = (props) => {
-    const renderField = ({ input, label, type, meta: { touched, error } }) => (
-        <div className="each-input">
-                <input {...input} placeholder={label} type={type} className="blank large-line-height" size="35"/>
-                {touched && (error && <span>{error}</span>)}
-        </div>
-    )
     const { handleSubmit, pristine, reset, submitting, createMeal } = props;
     return (
         <div>
             <h1><Link to="/">NeighborFoods</Link></h1>
+            <button className="landing-button form-button" onClick={props.searchMoreMeals}>Search meals</button>
             <form className="black-box" onSubmit={handleSubmit(createMeal)} id="new-meal-style">
                 <Field name="seller_name" component={renderField} type="text" label="Seller's name   *" />
                 <Field name="sell_dish" component={renderField} type="text" label="Dish   *" />
@@ -62,15 +63,16 @@ let Newmeal = (props) => {
                 <Field name="sell_plate_cost" component={renderField} type="number" label="$ for a plate   *" />
                 <Field name="sell_allergens" component={renderField} type="text" label="Nuts/dairy/eggs/gluten/other/none   *" />
                 <Field name="sell_email_address" component={renderField} type="email" label="Email address   *" size="35" />
-                <button className = "form-button" type="submit" disabled={pristine || submitting}>Post this</button>
+                <button className="form-button" type="submit" disabled={pristine || submitting}>Post a delicacy</button>
                 <div className="required">* is required</div>
             </form >
         </div>
     );
 }
-const mapDispatchToProps =(dispatch) =>{
+const mapDispatchToProps = (dispatch) => {
     return {
-        createMeal: (attributes) => dispatch(createMeal(attributes))
+        createMeal: (attributes) => dispatch(createMeal(attributes)),
+        searchMoreMeals: () => dispatch(push('/meals'))
     }
 }
 //Decorate with redux-form

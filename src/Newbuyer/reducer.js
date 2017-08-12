@@ -2,7 +2,8 @@ import { createReducer } from "redux-create-reducer";
 import * as actions from './action';
 
 const initialState = {
-    buyers:[]
+    buyers:[],
+    open: false
 }
 
 const CREATE_BUYER_FINISHED = (state, action) => {

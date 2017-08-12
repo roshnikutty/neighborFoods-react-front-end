@@ -15,8 +15,9 @@ class Meals extends React.Component {
 
         if (this.props.existingMeals) {
             allExistingMeals = this.props.existingMeals.map((meal) => {
-                return (
-                    <li className="black-box meal-item" key={meal._id}>
+                return (  
+                    //key uses backend meal id (meal_id)
+                    <li className="black-box meal-item" key={meal.meal_id}>         
                         <strong>Sellers Name</strong> {meal.seller_name} <br />
                         <strong>Dish</strong> {meal.sell_dish}<br />
                         <strong>Cuisine</strong> {meal.sell_cuisine}<br />

@@ -6,6 +6,11 @@ import { ConnectedRouter, push } from 'react-router-redux'
 import { history } from '../store';
 import { createBuyer } from './action';
 
+// import {clearAuthToken} from '../logout';
+
+var injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
+
 const validate = values => {
     const errors = {}
     if (!values.buyer_name) {
@@ -32,31 +37,38 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
     </div>
 )
 
-let Newbuyer = (props) => {
+let Newbuyer =(props)=> {
+   
     const { handleSubmit, pristine, reset, submitting } = props;
 
     return (
         <div>
+            {/*<button className="landing-button" onClick={clearAuthToken}>Log out</button>*/}
             <h1><Link to="/">NeighborFoods</Link></h1>
-            <form className="black-box" onSubmit={handleSubmit(createBuyer)} id="new-buyer-style">
+            <button className="landing-button form-button" onClick={props.searchMoreMeals}>Search meals</button>
+            <form className="black-box" onSubmit={props.handleSubmit(props.createBuyer)} id="new-buyer-style">
                 <Field name="buyer_name" className="blank" component={renderField} type="text" label="Buyer's name   *" />
                 <Field name="buy_date" className="blank" component={renderField} type="text" label="Date as mm/dd/yyyy" />
                 <Field name="buy_plate_count" className="blank" component={renderField} type="number" label="Number of plates   *" />
                 <Field name="buy_email_address" className="blank" component={renderField} type="email" label="Email address   *" />
-                <button className="form-button" type="submit" disabled={pristine || submitting}>Get this</button>
+                <button className="form-button" type="submit" disabled={props.pristine || props.submitting}>Buy meal</button>
                 <div className="required">* is required</div>
+                
             </form >
-            <button className="landing-button form-button" onClick={props.searchMoreMeals}>Search meals</button>
-
         </div>
     );
 }
 
+
 const mapDispatchToProps = (dispatch) => ({
-    createBuyer: (attributes) => { dispatch(createBuyer(attributes)) },
+    createBuyer: (attributes) => { dispatch(createBuyer(attributes)) },  //Should also update the value of Snackbar's open
     searchMoreMeals: () => dispatch(push('/meals'))
 })
 
+const mapStateToProps = (state) =>({
+   values: selector(state, 'buyer_name', 'buy_date', 'buy_plate_count', 'buy_email_address'),
+   snackbar: state.app.snackbar
+})
 
 //Decorate with redux-form
 Newbuyer = reduxForm({
@@ -66,7 +78,9 @@ Newbuyer = reduxForm({
 
 // Decorate with connect to read form values
 const selector = formValueSelector('Newbuyerform');
-export default connect(state => {
-    const values = selector(state, 'buyer_name', 'buy_date', 'buy_plate_count', 'buy_email_address');
-    return values;
-}, mapDispatchToProps)(Newbuyer)
+// export default connect(state => {
+//     const values = selector(state, 'buyer_name', 'buy_date', 'buy_plate_count', 'buy_email_address');
+//     return values;
+// }, mapDispatchToProps)(Newbuyer)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Newbuyer)

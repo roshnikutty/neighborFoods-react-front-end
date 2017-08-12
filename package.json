@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "enzyme": "^2.9.1",
     "react-redux": "^5.0.2",
-    "react-scripts": "0.8.5"
+    "react-scripts": "0.8.5",
+    "react-test-renderer": "^15.6.1"
   },
   "dependencies": {
     "history": "^4.6.3",
@@ -19,6 +21,7 @@
     "react-dom": "^15.4.2",
     "react-router-dom": "^4.0.0",
     "react-router-redux": "^5.0.0-alpha.6",
+    "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
     "redux-create-reducer": "^1.1.1",
     "redux-devtools-extension": "^2.13.2",
@@ -30,6 +33,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "setupTestFrameworkScriptFile":"./src/localStorageMock",
     "eject": "react-scripts eject"
   }
 }

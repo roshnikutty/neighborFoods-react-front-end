@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Route, Link, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux'
-// import { push } from 'react-router-redux';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Snackbar from 'material-ui/Snackbar';
+import RaisedButton from 'material-ui/RaisedButton';
+import { hideSnackBar } from './action';
 import { history } from '../store'
 import SignUp from '../Signup';
 import LogIn from '../Login';
@@ -16,6 +19,8 @@ import './app.css';
 const App = (props) => {
     return (
         <ConnectedRouter history={history}>
+            <MuiThemeProvider>
+            <Snackbar message={props.snackbar} autoHideDuration={4000} open={props.snackbar} onRequestClose={props.hideSnackBar} />
             <Switch>
                 <Route
                     exact
@@ -47,8 +52,18 @@ const App = (props) => {
                     component={Newbuyer}>
                 </Route>
             </ Switch>
-
+            </MuiThemeProvider>
         </ConnectedRouter>
     );
 }
-export default connect()(App)
+
+const mapDispatchToProps = (dispatch) => ({
+    hideSnackBar: () => { dispatch(hideSnackBar()) }
+})
+
+const mapStateToProps = (state) =>({
+    snackbar: state.snackbar,
+    open:state.open
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
