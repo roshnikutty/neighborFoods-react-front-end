@@ -54,7 +54,7 @@ let Newmeal = (props) => {
         <div>
             <h1><Link to="/">NeighborFoods</Link></h1>
             <button className="landing-button form-button" onClick={props.searchMoreMeals}>Search meals</button>
-            <form className="black-box" onSubmit={handleSubmit(createMeal)} id="new-meal-style">
+            <form className="black-box" onSubmit={handleSubmit(props.createMeal)} id="new-meal-style">
                 <Field name="seller_name" component={renderField} type="text" label="Seller's name   *" />
                 <Field name="sell_dish" component={renderField} type="text" label="Dish   *" />
                 <Field name="sell_cuisine" component={renderField} type="text" label="Cuisine" />
