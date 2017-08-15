@@ -2,23 +2,23 @@ import { createReducer } from "redux-create-reducer";
 import * as actions from './action';
 
 const initialState = {
-    open: false
+    snackbar: false
+
 }
 
 const SHOW_SNACK_BAR = (state, action) => {
     return Object.assign({}, state, {
-        snackbar: action.payload,
-        open: true
+        snackbar: action.payload
     })
 }
 
 const HIDE_SNACK_BAR = (state, action) => {
     return Object.assign({}, state, {
-        snackbar: null,
-        open: false
+        snackbar: false
     })
 }
 
 export default createReducer(initialState, {
-    SHOW_SNACK_BAR
+    SHOW_SNACK_BAR,
+    HIDE_SNACK_BAR
 })

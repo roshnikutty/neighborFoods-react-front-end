@@ -18,7 +18,7 @@ export const createMeal = (attributes) => {
     return function (dispatch) {
         dispatch(createMealStarted())
         //GET request to the API
-        let token = document.cookie.replace("token=", '');
+         let token = window.localStorage.getItem('token');
         fetch('http://localhost:8080/meals', {
             method: 'post',
             headers: {
@@ -27,10 +27,11 @@ export const createMeal = (attributes) => {
             },
             body: JSON.stringify(attributes)
         }).then(res => {
-            console.log("You posted this meal!!");
+            dispatch(showSnackBar("Your information is added successfully!"))
             return res.json()
         }).then(function (res) {
                 dispatch(createMealFinished(res))
+                dispatch(push('/meals'))
                 return res
             }).catch((err) => console.log(`ERROR in POST BUYER: ${err}`));
         // .catch((err) => (dispatch(getMealsFailed(), err)))

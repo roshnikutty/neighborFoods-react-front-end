@@ -20,38 +20,44 @@ const App = (props) => {
     return (
         <ConnectedRouter history={history}>
             <MuiThemeProvider>
-            <Snackbar message={props.snackbar} autoHideDuration={4000} open={props.snackbar} onRequestClose={props.hideSnackBar} />
-            <Switch>
-                <Route
-                    exact
-                    path="/"
-                    component={Home}
-                />
-                <Route
-                    exact
-                    path="/login"
-                    component={LogIn}
-                />
-                <Route
-                    exact
-                    path="/signup"
-                    component={SignUp} />
-                <Route
-                    exact
-                    path="/meals"
-                    component={Meals}>
-                </Route>
-                <Route
-                    exact
-                    path="/meals/new"
-                    component={Newmeal}>
-                </Route>
-                <Route
-                    exact
-                    path="/buyers/new"
-                    component={Newbuyer}>
-                </Route>
-            </ Switch>
+                <div>
+                    <Snackbar message={props.snackbar} 
+                                autoHideDuration={4000} 
+                                open={!!props.snackbar} 
+                                bodyStyle={{ backgroundColor: 'teal', color: '#ffffff' }}
+                                onRequestClose={props.hideSnackBar} />
+                    <Switch>
+                        <Route
+                            exact
+                            path="/"
+                            component={Home}
+                        />
+                        <Route
+                            exact
+                            path="/login"
+                            component={LogIn}
+                        />
+                        <Route
+                            exact
+                            path="/signup"
+                            component={SignUp} />
+                        <Route
+                            exact
+                            path="/meals"
+                            component={Meals}>
+                        </Route>
+                        <Route
+                            exact
+                            path="/meals/new"
+                            component={Newmeal}>
+                        </Route>
+                        <Route
+                            exact
+                            path="/buyers/new"
+                            component={Newbuyer}>
+                        </Route>
+                    </ Switch>
+                </div>
             </MuiThemeProvider>
         </ConnectedRouter>
     );
@@ -61,9 +67,8 @@ const mapDispatchToProps = (dispatch) => ({
     hideSnackBar: () => { dispatch(hideSnackBar()) }
 })
 
-const mapStateToProps = (state) =>({
-    snackbar: state.snackbar,
-    open:state.open
+const mapStateToProps = (state) => ({
+    snackbar: state.app.snackbar
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

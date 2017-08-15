@@ -31,7 +31,7 @@ export const createBuyer = (attributes) => {
             return res.json()
         }).then(function (res) {
             console.log("RESPONSE FROM POST BUYER", res);
-            dispatch(showSnackBar("I succeeded"))
+            dispatch(showSnackBar("Your information is added successfully!"))
             // dispatch(push('/meals'))
             // console.log(`The price of this purchase is ${attributes.buy_plate_count * meal.sell_plate_cost}`)
             dispatch(createBuyerFinished(res))
