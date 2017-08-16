@@ -39,14 +39,14 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 
 let Newbuyer =(props)=> {
    
-    const { handleSubmit, pristine, reset, submitting } = props;
+    const { handleSubmit, pristine, reset, submitting, match } = props;
 
     return (
         <div>
             {/*<button className="landing-button" onClick={clearAuthToken}>Log out</button>*/}
             <h1><Link to="/">NeighborFoods</Link></h1>
             <button className="landing-button form-button" onClick={props.searchMoreMeals}>Search meals</button>
-            <form className="black-box" onSubmit={props.handleSubmit(props.createBuyer)} id="new-buyer-style">
+            <form className="black-box" onSubmit={props.handleSubmit(props.createBuyer(match.params.id))} id="new-buyer-style">
                 <Field name="buyer_name" className="blank" component={renderField} type="text" label="Buyer's name   *" />
                 <Field name="buy_date" className="blank" component={renderField} type="text" label="Date as mm/dd/yyyy" />
                 <Field name="buy_plate_count" className="blank" component={renderField} type="number" label="Number of plates   *" />
@@ -61,7 +61,7 @@ let Newbuyer =(props)=> {
 
 
 const mapDispatchToProps = (dispatch) => ({
-    createBuyer: (attributes) => { dispatch(createBuyer(attributes)) },  //Should also update the value of Snackbar's open
+    createBuyer: (mealId) => (attributes) => { dispatch(createBuyer(mealId, attributes)) },  //Should also update the value of Snackbar's open
     searchMoreMeals: () => dispatch(push('/meals'))
 })
 

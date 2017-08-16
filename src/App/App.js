@@ -53,7 +53,7 @@ const App = (props) => {
                         </Route>
                         <Route
                             exact
-                            path="/buyers/new"
+                            path="/meals/:id/buy"
                             component={Newbuyer}>
                         </Route>
                     </ Switch>

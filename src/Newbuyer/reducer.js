@@ -3,7 +3,6 @@ import * as actions from './action';
 
 const initialState = {
     buyers:[],
-    open: false
 }
 
 const CREATE_BUYER_FINISHED = (state, action) => {

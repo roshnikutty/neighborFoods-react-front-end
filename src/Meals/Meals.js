@@ -26,7 +26,7 @@ class Meals extends React.Component {
                         <strong>Price per plate</strong> ${meal.sell_plate_cost}<br />
                         <strong>Allergens</strong> {meal.sell_allergens}<br />
                         <strong>Email address</strong> {meal.sell_email_address}<br />
-                        <button className="landing-button buy-button" onClick={this.props.buyMeal}> Buy </button> 
+                        <button className="landing-button buy-button" onClick={this.props.buyMeal(meal.meal_id)}> Buy </button> 
                     </li>);
             })
         }
@@ -45,7 +45,6 @@ class Meals extends React.Component {
                 </header>
                 <div >
                     <ul className="meal-area">
-                    {/*I HAVE MEALS YAY!*/}
                     {allExistingMeals}
                     </ul>
                 </div>
@@ -56,7 +55,7 @@ class Meals extends React.Component {
 const mapDispatchToProps = (dispatch) =>
     ({
         postDishes: () => dispatch(push('/meals/new')),
-        buyMeal: () => dispatch(push('/buyers/new'))
+        buyMeal: (id) => () => dispatch(push(`/meals/${id}/buy`))
     })
 
 const mapStateToProps = (state) => ({

@@ -15,7 +15,7 @@ export const getMeals = () => {
     return function (dispatch) {
         dispatch(getMealsStarted())
         //GET request to the API
-        fetch('http://localhost:8080/meals', {
+        return fetch('http://localhost:8080/meals', {
             method: 'GET',
             headers: {
                 'Authorization': `JWT ${token}`,
