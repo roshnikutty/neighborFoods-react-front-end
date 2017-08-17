@@ -37,23 +37,27 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
     </div>
 )
 
-let Newbuyer =(props)=> {
-   
+let Newbuyer = (props) => {
+
     const { handleSubmit, pristine, reset, submitting, match } = props;
 
     return (
         <div>
             {/*<button className="landing-button" onClick={clearAuthToken}>Log out</button>*/}
             <h1><Link to="/">NeighborFoods</Link></h1>
-            <button className="landing-button form-button" onClick={props.searchMoreMeals}>Search meals</button>
+            <p className="search-meals-button">
+                <button className="landing-button" onClick={props.searchMoreMeals}>Search meals</button>
+            </p>
             <form className="black-box" onSubmit={props.handleSubmit(props.createBuyer(match.params.id))} id="new-buyer-style">
                 <Field name="buyer_name" className="blank" component={renderField} type="text" label="Buyer's name   *" />
                 <Field name="buy_date" className="blank" component={renderField} type="text" label="Date as mm/dd/yyyy" />
                 <Field name="buy_plate_count" className="blank" component={renderField} type="number" label="Number of plates   *" />
                 <Field name="buy_email_address" className="blank" component={renderField} type="email" label="Email address   *" />
-                <button className="form-button" type="submit" disabled={props.pristine || props.submitting}>Buy meal</button>
+                <p className="post-buy-button">
+                    <button type="submit" disabled={props.pristine || props.submitting}>Buy meal</button>
+                </p>
                 <div className="required">* is required</div>
-                
+
             </form >
         </div>
     );
@@ -65,9 +69,9 @@ const mapDispatchToProps = (dispatch) => ({
     searchMoreMeals: () => dispatch(push('/meals'))
 })
 
-const mapStateToProps = (state) =>({
-   values: selector(state, 'buyer_name', 'buy_date', 'buy_plate_count', 'buy_email_address'),
-   snackbar: state.app.snackbar
+const mapStateToProps = (state) => ({
+    values: selector(state, 'buyer_name', 'buy_date', 'buy_plate_count', 'buy_email_address'),
+    snackbar: state.app.snackbar
 })
 
 //Decorate with redux-form

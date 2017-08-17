@@ -65,7 +65,7 @@ let Newmeal = (props) => {
                 <Field name="sell_plate_cost" component={renderField} type="number" label="$ for a plate   *" />
                 <Field name="sell_allergens" component={renderField} type="text" label="Nuts/dairy/eggs/gluten/other/none   *" />
                 <Field name="sell_email_address" component={renderField} type="email" label="Email address   *" size="35" />
-                <p className="post-button">
+                <p className="post-buy-button">
                     <button type="submit" disabled={pristine || submitting}>Post a delicacy</button>
                 </p>
                 <div className="required">* is required</div>

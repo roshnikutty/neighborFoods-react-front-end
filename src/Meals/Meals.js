@@ -41,7 +41,7 @@ class Meals extends React.Component {
                     <h1>
                         <Link to="/">NeighborFoods</Link>
                     </h1>
-                    <p className="post-button">
+                    <p className="post-buy-button">
                         <button className="landing-button"
                             onClick={this.props.postDishes}>Post your dishes
                     </button>

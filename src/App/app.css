@@ -45,6 +45,7 @@ h2 {
     margin-left:34px;
     margin-bottom: 12px;
     font-size: 1.15em;
+    display: inline-block;
 
 }
 input.blank{
@@ -96,7 +97,7 @@ button:hover{
 input:required {         /*fix for Firefox showing red border around required fields*/
     box-shadow:none;
 }
-.signup_button, .login_button, {
+p.signup_button, p.login_button {
     text-align: center;
 }
 #new-meal-style, #new-buyer-style {
@@ -141,10 +142,10 @@ input:required {         /*fix for Firefox showing red border around required fi
     overflow-x: scroll;
 }
 
-.post-button, .search-meals-button{ 
+.post-buy-button, .search-meals-button{ 
     margin-right: 30px;
 }
-.buy-button, .post-button {
+.buy-button, .post-buy-button {
     text-align: right;
 }
 strong {
@@ -159,10 +160,10 @@ strong {
         text-align: center; 
         align-items: center;
     }
-    .header-login-button, .header-signup-button, .header-buttons, .post-button, .buy-button, .search-meals-button {
+    .header-login-button, .header-signup-button, .header-buttons, .post-buy-button, .buy-button, .search-meals-button {
         text-align: center;
     }
-    .post-button, .search-meals-button {
+    .post-buy-button, .search-meals-button {
         margin-right: 0;
     }
     #new-meal-style, #new-buyer-style {
