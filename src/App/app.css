@@ -110,13 +110,14 @@ input:required {         /*fix for Firefox showing red border around required fi
 }
 .landing-button, .page-login-signup-button {
     max-width: 90px;
-    height: auto;
     padding: 5px;
        
 }
 .landing-button{
     margin:0px 5px;
-    float: right;
+}
+.header-buttons {
+    text-align: right;
 }
 .login-style {
     background-color: #cacdce;
@@ -162,7 +163,7 @@ strong {
         text-align: center; 
         align-items: center;
     }
-    .header-login-button, .header-signup-button {
+    .header-login-button, .header-signup-button, .header-buttons {
         text-align: center;
     }
 }
