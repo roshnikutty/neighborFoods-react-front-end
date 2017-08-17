@@ -96,7 +96,7 @@ button:hover{
 input:required {         /*fix for Firefox showing red border around required fields*/
     box-shadow:none;
 }
-.signup_button{
+.signup_button, .login_button{
     text-align: center;
 }
 #new-meal-style, #new-buyer-style {
@@ -155,20 +155,19 @@ strong {
     margin-right: 10px;
 }
 /*---------media queries----------------*/
+/* screens width upto 900px */
 
 @media (max-width: 900px){
     h1{
         text-align: center; 
         align-items: center;
     }
-
-    .page-login-signup-button {
-        position: relative;
+    .header-login-button, .header-signup-button {
         text-align: center;
-        left: 50%;
-        right: 50%;
     }
 }
+
+/* screens width upto 650px */
 
 @media (max-width: 650px){
     header > h1 {
@@ -177,10 +176,10 @@ strong {
     body {
         margin: 10px 0;
     }
-         #signup-form{
-            width: 100%;
-            padding: 0;
-        }
+    #signup-form {
+        width: 100%;
+        padding: 0;
+    }
     .black-box{
         margin: 0;
         max-width: none;
@@ -195,16 +194,16 @@ strong {
         border-radius: 4px;
         width: calc(100% - 40px) !important;
      }
-        .signup{
-            margin-top: 7%;
-            width: 100%;
-        }
-        input.blank{
-            width: 100%;
-        }
-
-    
+    .signup{
+        margin-top: 7%;
+        width: 100%;
+    }
+    input.blank{
+        width: 100%;
+    }   
 }
+
+/* Screens wider than 900px */
 
 @media (min-width: 900px){
     .page-login-signup-button {

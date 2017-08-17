@@ -21,7 +21,9 @@ const SignUp = (props) => {
         <div className="signup-form">
             <header>
                 <h1><Link to="/">NeighborFoods</Link></h1>
-                <button className="page-login-signup-button login-style" onClick={props.gotoLogin} >Log In</button>
+                <p className="header-login-button">
+                    <button className="page-login-signup-button login-style" onClick={props.gotoLogin} >Log In</button>
+                </p>
             </header>
             <form onSubmit={handleSubmit} id="signup-form">
                 <div className="black-box signup">
