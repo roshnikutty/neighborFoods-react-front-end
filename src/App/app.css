@@ -96,7 +96,7 @@ button:hover{
 input:required {         /*fix for Firefox showing red border around required fields*/
     box-shadow:none;
 }
-.signup_button, .login_button{
+.signup_button, .login_button, {
     text-align: center;
 }
 #new-meal-style, #new-buyer-style {
@@ -116,7 +116,7 @@ input:required {         /*fix for Firefox showing red border around required fi
 .landing-button{
     margin:0px 5px;
 }
-.header-buttons {
+.header-buttons, .search-meals-button {
     text-align: right;
 }
 .login-style {
@@ -141,7 +141,7 @@ input:required {         /*fix for Firefox showing red border around required fi
     overflow-x: scroll;
 }
 
-.post-button{ 
+.post-button, .search-meals-button{ 
     margin-right: 30px;
 }
 .buy-button, .post-button {
@@ -159,11 +159,14 @@ strong {
         text-align: center; 
         align-items: center;
     }
-    .header-login-button, .header-signup-button, .header-buttons, .post-button, .buy-button {
+    .header-login-button, .header-signup-button, .header-buttons, .post-button, .buy-button, .search-meals-button {
         text-align: center;
     }
-    .post-button {
+    .post-button, .search-meals-button {
         margin-right: 0;
+    }
+    #new-meal-style, #new-buyer-style {
+        max-width: 100%;
     }
 }
 
