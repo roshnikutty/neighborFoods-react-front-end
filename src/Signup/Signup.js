@@ -18,9 +18,9 @@ const SignUp = (props) => {
         });
     }
     return (
-        <div>
-            <h1><Link to="/">NeighborFoods</Link></h1>
+        <div className="signup-form">
             <header>
+                <h1><Link to="/">NeighborFoods</Link></h1>
                 <button className="page-login-signup-button login-style" onClick={props.gotoLogin} >Log In</button>
             </header>
             <form onSubmit={handleSubmit} id="signup-form">
@@ -29,8 +29,9 @@ const SignUp = (props) => {
                     <p><input type="password" ref={(input) => password = input} className="blank" placeholder="Password" size="35" required /></p>
                     <p><input type="text" ref={(input) => firstName = input} className="blank" placeholder="First Name" size="35" required /></p>
                     <p><input type="text" ref={(input) => lastName = input} className="blank" placeholder="Last Name" size="35" required /></p>
-
-                    <button className="signup-login-button" >Sign Up</button>
+                    <p className="signup_button">
+                        <button className="signup-login-button" >Sign Up</button>
+                    </p>
                 </div>
             </form>
         </div>

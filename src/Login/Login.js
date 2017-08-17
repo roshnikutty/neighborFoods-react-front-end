@@ -9,7 +9,7 @@ const LogIn = (props) => {
     let username, password;
     function handleSubmit(e) {
         e.preventDefault();
-    console.log(`INSIDE HANDLESUBMIT--- ${username.value}, ${password.value}`);
+        console.log(`INSIDE HANDLESUBMIT--- ${username.value}, ${password.value}`);
         return props.login({
             username: username.value,
             password: password.value
@@ -18,8 +18,8 @@ const LogIn = (props) => {
 
     return (
         <div>
-            <h1><Link to="/">NeighborFoods</Link></h1>
             <header>
+                <h1><Link to="/">NeighborFoods</Link></h1>
                 <button className="page-login-signup-button" onClick={props.gotoSignup}>Sign Up</button>
             </header>
             <form onSubmit={handleSubmit} id="login-form">

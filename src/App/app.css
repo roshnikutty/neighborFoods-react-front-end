@@ -34,23 +34,23 @@ h2 {
     text-align: center;
 }
 .signup, .login {
-    display: inline-block;
     max-width: 500px;
-    margin-left: 11;
-    margin-top:7%;
+    margin: auto;
 }
 #signup-form, #login-form{
-    max-width: 600px;
     margin: auto;
-    padding-left: 15%;
     padding-top: 7.5%;
 }
 .signup-login-button{
     margin-left:34px;
     margin-bottom: 12px;
+    font-size: 1.15em;
+
 }
 input.blank{
     text-align: center;
+    padding: 0;
+    width: 100%;
 }
 button {
     background-color: #ff5722;
@@ -71,8 +71,9 @@ button:hover{
     background-color: transparent;
     color: #c78181;
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 1.15em;
     font-weight: 100;
+    line-height: 3em;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -95,6 +96,9 @@ button:hover{
 input:required {         /*fix for Firefox showing red border around required fields*/
     box-shadow:none;
 }
+.signup_button{
+    text-align: center;
+}
 #new-meal-style, #new-buyer-style {
     padding: 20px;
     margin: auto;
@@ -105,7 +109,6 @@ input:required {         /*fix for Firefox showing red border around required fi
     font-size: 0.8em;
 }
 .landing-button, .page-login-signup-button {
-    float: right;
     max-width: 90px;
     height: auto;
     padding: 5px;
@@ -113,14 +116,12 @@ input:required {         /*fix for Firefox showing red border around required fi
 }
 .landing-button{
     margin:0px 5px;
+    float: right;
 }
 .login-style {
     background-color: #cacdce;
     color:#ff5722;
     margin-right: 12px;
-}
-.page-login-signup-button{
-    margin: 0px 40px 0px 15px;
 }
 
 .form-button{
@@ -152,4 +153,62 @@ input:required {         /*fix for Firefox showing red border around required fi
 strong {
     color: #ff5722;
     margin-right: 10px;
+}
+/*---------media queries----------------*/
+
+@media (max-width: 900px){
+    h1{
+        text-align: center; 
+        align-items: center;
+    }
+
+    .page-login-signup-button {
+        position: relative;
+        text-align: center;
+        left: 50%;
+        right: 50%;
+    }
+}
+
+@media (max-width: 650px){
+    header > h1 {
+        width: 100%;
+    }
+    body {
+        margin: 10px 0;
+    }
+         #signup-form{
+            width: 100%;
+            padding: 0;
+        }
+    .black-box{
+        margin: 0;
+        max-width: none;
+        /*padding: 5px 20px 5px 20px;*/
+        background-color: #000000;
+        opacity: 16%;
+        color: #d7d7d7;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 100;
+        border-radius: 4px;
+        width: calc(100% - 40px) !important;
+     }
+        .signup{
+            margin-top: 7%;
+            width: 100%;
+        }
+        input.blank{
+            width: 100%;
+        }
+
+    
+}
+
+@media (min-width: 900px){
+    .page-login-signup-button {
+        float: right;
+        margin: 0px 40px 0px 15px;
+    }
 }
