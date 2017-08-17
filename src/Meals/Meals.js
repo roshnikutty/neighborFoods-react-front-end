@@ -15,10 +15,10 @@ class Meals extends React.Component {
 
         if (this.props.existingMeals) {
             allExistingMeals = this.props.existingMeals.map((meal) => {
-                return (  
+                return (
                     //key uses backend meal id (meal_id)
-                    <li className="black-box meal-item" key={meal.meal_id}>         
-                        <strong>Sellers Name</strong> {meal.seller_name} <br />
+                    <li className="black-box meal-item" key={meal.meal_id}>
+                        <strong>Seller's Name</strong> {meal.seller_name} <br />
                         <strong>Dish</strong> {meal.sell_dish}<br />
                         <strong>Cuisine</strong> {meal.sell_cuisine}<br />
                         <strong>Date</strong> {meal.sell_date}<br />
@@ -26,7 +26,9 @@ class Meals extends React.Component {
                         <strong>Price per plate</strong> ${meal.sell_plate_cost}<br />
                         <strong>Allergens</strong> {meal.sell_allergens}<br />
                         <strong>Email address</strong> {meal.sell_email_address}<br />
-                        <button className="landing-button buy-button" onClick={this.props.buyMeal(meal.meal_id)}> Buy </button> 
+                        <p className="buy-button">
+                            <button className="landing-button" onClick={this.props.buyMeal(meal.meal_id)}> Buy </button>
+                        </p>
                     </li>);
             })
         }
@@ -36,16 +38,18 @@ class Meals extends React.Component {
         return (
             <div>
                 <header>
-                <h1>
-                    <Link to="/">NeighborFoods</Link>
+                    <h1>
+                        <Link to="/">NeighborFoods</Link>
                     </h1>
-                    <button className="post-dishes landing-button"
-                        onClick={this.props.postDishes}>Post your dishes
+                    <p className="post-button">
+                        <button className="landing-button"
+                            onClick={this.props.postDishes}>Post your dishes
                     </button>
+                    </p>
                 </header>
                 <div >
                     <ul className="meal-area">
-                    {allExistingMeals}
+                        {allExistingMeals}
                     </ul>
                 </div>
             </div>

@@ -131,26 +131,22 @@ input:required {         /*fix for Firefox showing red border around required fi
 .meal-area {
     margin: auto;
     padding: 5%;
-    margin-top: 54px;
 }
 .meal-item {
     list-style-type: none;
     margin:auto;
     width: 70%;
     margin-top:10px;
-    padding-right: 20px;
+    padding: 20px 20px;
     overflow-x: scroll;
 }
 
-.buy-button {
-    position: relative;
-    bottom:50px;
-    right: 50px;
-}
-.post-dishes{
+.post-button{ 
     margin-right: 30px;
 }
-
+.buy-button, .post-button {
+    text-align: right;
+}
 strong {
     color: #ff5722;
     margin-right: 10px;
@@ -163,8 +159,11 @@ strong {
         text-align: center; 
         align-items: center;
     }
-    .header-login-button, .header-signup-button, .header-buttons {
+    .header-login-button, .header-signup-button, .header-buttons, .post-button, .buy-button {
         text-align: center;
+    }
+    .post-button {
+        margin-right: 0;
     }
 }
 
@@ -201,6 +200,9 @@ strong {
     }
     input.blank{
         width: 100%;
+    }
+    li.black-box{
+        margin-bottom: 10px;
     }   
 }
 
