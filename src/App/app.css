@@ -68,7 +68,7 @@ button:hover{
     cursor: pointer;
 }
 
-.blank{
+.blank {
     background-color: transparent;
     color: #c78181;
     font-family: 'Roboto', sans-serif;
@@ -86,11 +86,11 @@ button:hover{
 .large-line-height {
     line-height: 286%;
 }
-.each-input{
+.each-input {
     padding-left: 29px;
     padding-right: 40px;
 }
-.each-input>input.blank{
+.each-input>input.blank {
     text-align: center;
     width: 100%;
 }
@@ -114,7 +114,7 @@ p.signup_button, p.login_button {
     padding: 5px;
        
 }
-.landing-button{
+.landing-button {
     margin:0px 5px;
 }
 .header-buttons, .search-meals-button {
@@ -142,7 +142,7 @@ p.signup_button, p.login_button {
     overflow-x: scroll;
 }
 
-.post-buy-button, .search-meals-button{ 
+.post-buy-button, .search-meals-button { 
     margin-right: 30px;
 }
 .buy-button, .post-buy-button {
@@ -152,10 +152,13 @@ strong {
     color: #ff5722;
     margin-right: 10px;
 }
+.two-col-left, .two-col-right{
+    display: inline-block;
+}
 /*---------media queries----------------*/
 /* screens width upto 900px */
 
-@media (max-width: 900px){
+@media (max-width: 900px) {
     h1{
         text-align: center; 
         align-items: center;
@@ -169,11 +172,15 @@ strong {
     #new-meal-style, #new-buyer-style {
         max-width: 100%;
     }
+    .two-col-right {
+        display: block;
+        margin-left: 0;
+    }
 }
 
 /* screens width upto 650px */
 
-@media (max-width: 650px){
+@media (max-width: 650px) {
     header > h1 {
         width: 100%;
     }
@@ -184,10 +191,9 @@ strong {
         width: 100%;
         padding: 0;
     }
-    .black-box{
+    .black-box {
         margin: 0;
         max-width: none;
-        /*padding: 5px 20px 5px 20px;*/
         background-color: #000000;
         opacity: 16%;
         color: #d7d7d7;
@@ -198,23 +204,30 @@ strong {
         border-radius: 4px;
         width: calc(100% - 40px) !important;
      }
-    .signup{
+    .signup {
         margin-top: 7%;
         width: 100%;
     }
-    input.blank{
+    input.blank {
         width: 100%;
     }
-    li.black-box{
+    li.black-box {
         margin-bottom: 10px;
-    }   
+    }
+    .two-col-right {
+        display: block;
+        margin-left: 0;
+    }
 }
 
 /* Screens wider than 900px */
 
-@media (min-width: 900px){
+@media (min-width: 900px) {
     .page-login-signup-button {
         float: right;
         margin: 0px 40px 0px 15px;
+    }
+    .two-col-right {
+        margin-left: 10%;
     }
 }

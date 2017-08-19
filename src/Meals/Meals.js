@@ -18,20 +18,24 @@ class Meals extends React.Component {
                 //converting iso 8601 date to string
                 let dString = `${meal.sell_date}`;
                 //extracting month, date, year from iso 8601 format separated by hyphens
-                let dSplit = dString.replace(/\D/g," ").split(" ");
+                let dSplit = dString.replace(/\D/g, " ").split(" ");
                 let date = (`${dSplit[1]}-${dSplit[2]}-${dSplit[0]}`);
 
                 return (
                     //key uses backend meal id (meal_id)
                     <li className="black-box meal-item" key={meal.meal_id}>
-                        <strong>Seller's Name</strong> {meal.seller_name} <br />
-                        <strong>Dish</strong> {meal.sell_dish}<br />
-                        <strong>Cuisine</strong> {meal.sell_cuisine}<br />
-                        <strong>Date</strong> {date}<br />
-                        <strong>Number of plates</strong> {meal.sell_plate_count}<br />
-                        <strong>Price per plate</strong> ${meal.sell_plate_cost}<br />
-                        <strong>Allergens</strong> {meal.sell_allergens}<br />
-                        <strong>Email address</strong> {meal.sell_email_address}<br />
+                        <div className="two-col-left">
+                            <strong>Seller's Name</strong> {meal.seller_name} <br />
+                            <strong>Dish</strong> {meal.sell_dish}<br />
+                            <strong>Cuisine</strong> {meal.sell_cuisine}<br />
+                            <strong>Date</strong> {date}<br />
+                        </div>
+                        <div className="two-col-right">
+                            <strong>Number of plates</strong> {meal.sell_plate_count}<br />
+                            <strong>Price per plate</strong> ${meal.sell_plate_cost}<br />
+                            <strong>Allergens</strong> {meal.sell_allergens}<br />
+                            <strong>Email address</strong> {meal.sell_email_address}<br />
+                        </div>
                         <p className="buy-button">
                             <button className="landing-button" onClick={this.props.buyMeal(meal.meal_id)}> Buy </button>
                         </p>
