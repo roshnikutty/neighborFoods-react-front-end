@@ -1,3 +1,7 @@
+
 export const clearAuthToken = () => {
-    localStorage.removeItem('token');
+    //clear token from localStorage
+
+    localStorage.removeItem('token');   
 };
+

@@ -117,15 +117,24 @@ p.signup_button, p.login_button {
 .landing-button {
     margin:0px 5px;
 }
-.header-buttons, .search-meals-button {
+.header-buttons, .logout-style-p {
     text-align: right;
 }
-.login-style {
+.search-meals-button {
+        text-align: left;
+
+}
+
+.login-style, .logout-style {
     background-color: #cacdce;
     color:#ff5722;
     margin-right: 12px;
 }
-
+.logout-style{
+    padding:9px;
+    height:auto;
+    width:auto;   
+}
 .form-button{
     margin: 3% 29% 0 38%;
 }
@@ -163,7 +172,8 @@ strong {
         text-align: center; 
         align-items: center;
     }
-    .header-login-button, .header-signup-button, .header-buttons, .post-buy-button, .buy-button, .search-meals-button {
+    .header-login-button, .header-signup-button, .header-buttons, 
+    .post-buy-button, .buy-button, .search-meals-button, .logout-style-p {
         text-align: center;
     }
     .post-buy-button, .search-meals-button {

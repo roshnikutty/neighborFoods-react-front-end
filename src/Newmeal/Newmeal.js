@@ -4,6 +4,7 @@ import { Field, reduxForm, formValueSelector, reset } from 'redux-form';
 import { ConnectedRouter, push } from 'react-router-redux';
 import { Route, Link, Switch } from 'react-router-dom';
 import { createMeal } from './action';
+import { clearAuthToken } from '../logout';
 
 const validate = values => {
     const errors = {}
@@ -53,10 +54,13 @@ let Newmeal = (props) => {
     return (
         <div>
             <h1><Link to="/">NeighborFoods</Link></h1>
-            <p className="search-meals-button">
-                <button className="landing-button" onClick={props.searchMoreMeals}>Search meals</button>
+            <p className="logout-style-p">
+                <button className="logout-style" onClick={props.logout}>Log out</button>
             </p>
             <form className="black-box" onSubmit={handleSubmit(props.createMeal)} id="new-meal-style">
+                <p className="search-meals-button">
+                    <button className="landing-button" onClick={props.searchMoreMeals}>Search meals</button>
+                </p>
                 <Field name="seller_name" component={renderField} type="text" label="Seller's name   *" />
                 <Field name="sell_dish" component={renderField} type="text" label="Dish   *" />
                 <Field name="sell_cuisine" component={renderField} type="text" label="Cuisine" />
@@ -76,7 +80,11 @@ let Newmeal = (props) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         createMeal: (attributes) => dispatch(createMeal(attributes)),
-        searchMoreMeals: () => dispatch(push('/meals'))
+        searchMoreMeals: () => dispatch(push('/meals')),
+        logout: () => {
+            clearAuthToken();
+            dispatch(push('/'));
+        }
     }
 }
 //Decorate with redux-form

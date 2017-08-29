@@ -24,13 +24,8 @@ export const getMeals = () => {
         }).then(res => {
             return res.json()
         }).then(res => {
-            console.log(res);
             dispatch(getMealsFinished(res))
         }).catch(err => console.log(`error getting meals: ${err}`))
         // .catch((err) => (dispatch(getMealsFailed(), err)))
     }
 };
-
-// export const buyMeal =() =>{
-
-// }

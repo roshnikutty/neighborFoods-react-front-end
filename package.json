@@ -2,8 +2,18 @@
   "name": "neighborFoods",
   "version": "0.1.0",
   "private": true,
+  "jest":{
+    "globals": {
+      "widow": "true"
+    },
+    "setupFiles": [
+    "jest-localstorage-mock"
+  ],
+    "verbose": true
+  },
   "devDependencies": {
     "enzyme": "^2.9.1",
+    "jest-localstorage-mock": "^1.2.0",
     "react-redux": "^5.0.2",
     "react-scripts": "0.8.5",
     "react-test-renderer": "^15.6.1"
@@ -33,7 +43,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "setupTestFrameworkScriptFile":"./src/localStorageMock",
+    "setupTestFrameworkScriptFile": "./src/localStorageMock",
     "eject": "react-scripts eject"
   }
 }

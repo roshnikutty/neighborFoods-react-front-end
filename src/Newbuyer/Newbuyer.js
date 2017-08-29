@@ -6,7 +6,7 @@ import { ConnectedRouter, push } from 'react-router-redux'
 import { history } from '../store';
 import { createBuyer } from './action';
 
-// import {clearAuthToken} from '../logout';
+import { clearAuthToken } from '../logout';
 
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
@@ -43,12 +43,14 @@ let Newbuyer = (props) => {
 
     return (
         <div>
-            {/*<button className="landing-button" onClick={clearAuthToken}>Log out</button>*/}
             <h1><Link to="/">NeighborFoods</Link></h1>
-            <p className="search-meals-button">
-                <button className="landing-button" onClick={props.searchMoreMeals}>Search meals</button>
+            <p className="logout-style-p">
+                <button className="logout-style" onClick={props.logout}>Log out</button>
             </p>
             <form className="black-box" onSubmit={props.handleSubmit(props.createBuyer(match.params.id))} id="new-buyer-style">
+                <p className="search-meals-button">
+                    <button className="landing-button" onClick={props.searchMoreMeals}>Search meals</button>
+                </p>
                 <Field name="buyer_name" className="blank" component={renderField} type="text" label="Buyer's name   *" />
                 <Field name="buy_date" className="blank" component={renderField} type="text" label="Date as mm/dd/yyyy" />
                 <Field name="buy_plate_count" className="blank" component={renderField} type="number" label="Number of plates   *" />
@@ -65,8 +67,12 @@ let Newbuyer = (props) => {
 
 
 const mapDispatchToProps = (dispatch) => ({
-    createBuyer: (mealId) => (attributes) => { dispatch(createBuyer(mealId, attributes)) },  //Should also update the value of Snackbar's open
-    searchMoreMeals: () => dispatch(push('/meals'))
+    createBuyer: (mealId) => (attributes) => { dispatch(createBuyer(mealId, attributes)) },
+    searchMoreMeals: () => dispatch(push('/meals')),
+    logout: () => {
+        clearAuthToken();
+        dispatch(push('/'));
+    }
 })
 
 const mapStateToProps = (state) => ({
@@ -82,9 +88,5 @@ Newbuyer = reduxForm({
 
 // Decorate with connect to read form values
 const selector = formValueSelector('Newbuyerform');
-// export default connect(state => {
-//     const values = selector(state, 'buyer_name', 'buy_date', 'buy_plate_count', 'buy_email_address');
-//     return values;
-// }, mapDispatchToProps)(Newbuyer)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Newbuyer)

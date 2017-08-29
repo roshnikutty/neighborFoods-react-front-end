@@ -25,4 +25,4 @@ export class LocalStorageMock {
 
 global.localStorage = new LocalStorageMock;
 
-export default connect()(LocalStorageMock);
+export default LocalStorageMock;

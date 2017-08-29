@@ -11,12 +11,12 @@ import SignUp from '../Signup';
 import LogIn from '../Login';
 import Home from '../Home';
 import Meals from '../Meals';
-import Newmeal from '../Newmeal';
-import Newbuyer from '../Newbuyer';
+import requireAuthentication from './RequireAuthentication'
 
 import './app.css';
 
 const App = (props) => {
+
     return (
         <ConnectedRouter history={history}>
             <MuiThemeProvider>
@@ -26,7 +26,6 @@ const App = (props) => {
                                 open={!!props.snackbar} 
                                 bodyStyle={{ backgroundColor: 'teal', color: '#ffffff' }}
                                 onRequestClose={props.hideSnackBar} />
-                    <Switch>
                         <Route
                             exact
                             path="/"
@@ -42,21 +41,11 @@ const App = (props) => {
                             path="/signup"
                             component={SignUp} />
                         <Route
-                            exact
                             path="/meals"
-                            component={Meals}>
+                            component={requireAuthentication(Meals)}
+                            >
                         </Route>
-                        <Route
-                            exact
-                            path="/meals/new"
-                            component={Newmeal}>
-                        </Route>
-                        <Route
-                            exact
-                            path="/meals/:id/buy"
-                            component={Newbuyer}>
-                        </Route>
-                    </ Switch>
+                        
                 </div>
             </MuiThemeProvider>
         </ConnectedRouter>

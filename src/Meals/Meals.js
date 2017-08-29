@@ -2,15 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getMeals } from './action';
 import { Route, Link, Switch } from 'react-router-dom';
-import { ConnectedRouter, push } from 'react-router-redux';
+import {  push } from 'react-router-redux';
 import store, { history } from '../store';
+import Newmeal from '../Newmeal';
+import Newbuyer from '../Newbuyer';
+
 class Meals extends React.Component {
     componentWillMount() {
         store.dispatch(getMeals());
     }
-    render() {
-        // console.log("EXISTING MEAL CHECK", this.props.existingMeals);
 
+    render() {
         let allExistingMeals = undefined;
 
         if (this.props.existingMeals) {
@@ -77,4 +79,26 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Meals);
+let MealsRouter = (props)  => {
+    console.log('URL', props.match.url)
+    return (
+        <Switch>
+            <Route
+                exact
+                path={`${props.match.url}`}
+                component={connect(mapStateToProps, mapDispatchToProps)(Meals)}
+            />
+            <Route
+                path={`${props.match.url}/new`}
+                component={Newmeal}>
+            </Route>
+            <Route
+                exact
+                path={`${props.match.url}/:id/buy`}
+                component={Newbuyer}>
+            </Route>
+        </Switch>
+    )
+}
+
+export default connect()(MealsRouter)
