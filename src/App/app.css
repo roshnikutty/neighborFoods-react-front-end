@@ -164,6 +164,13 @@ strong {
 .two-col-left, .two-col-right{
     display: inline-block;
 }
+.buttons-box{
+    text-align: center;
+    margin-top: 100px;
+}
+.session-button{
+    margin-right: 100px;
+}
 /*---------media queries----------------*/
 /* screens width upto 900px */
 
