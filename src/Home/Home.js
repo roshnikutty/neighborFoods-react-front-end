@@ -10,8 +10,9 @@ export const Home = (props) => (
         <header>
             <h1><Link to="/">NeighborFoods</Link></h1>
             <p className="header-buttons">
-            <button className="login landing-button" onClick={props.gotoLogin} >Log In</button>
-            <button className="landing-button" onClick={props.gotoSignup}>Sign Up</button>
+                <button className="login landing-button" onClick={props.gotoLogin} >Log In</button>
+                <button className="landing-button" onClick={props.gotoSignup}>Sign Up</button>
+            <span className="demo">Guest Sign in - Username: demo, Password: demo</span>
             </p>
         </header>
         <main>
