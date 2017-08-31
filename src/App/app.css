@@ -171,11 +171,14 @@ strong {
 .session-button{
     margin-right: 100px;
 }
+#warn {
+    font-size: 1.2em;
+}
 /*---------media queries----------------*/
 /* screens width upto 900px */
 
 @media (max-width: 900px) {
-    h1{
+    h1, #warn{
         text-align: center; 
         align-items: center;
     }
@@ -193,12 +196,17 @@ strong {
         display: block;
         margin-left: 0;
     }
+    .session-button{
+        display: block;
+        margin: auto;
+        margin-bottom: 50px;
+    }
 }
 
 /* screens width upto 650px */
 
 @media (max-width: 650px) {
-    header > h1 {
+    header > h1, #warn {
         width: 100%;
     }
     body {

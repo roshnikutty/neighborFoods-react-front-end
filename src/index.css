@@ -1,7 +1,5 @@
 body {
     box-sizing: border-box;
-	/*background-color:#252728;*/
-    /*opacity: 86%;*/
     background: url("./neighbor-foods.jpeg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;

@@ -7,14 +7,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import mealReducer from './Meals/reducer';
 import loginReducer from './Login/reducer';
 import appReducer from './App/reducer'
-// import { neighborFoodsReducer } from './reducers';
 import {reducer as formReducer} from 'redux-form'; 
 
 export const history = createHistory();
 const logger = createLogger();
 const reducer = combineReducers(
     {
-        // neighborFoodsReducer,
         mealReducer,
         loginReducer,
         form: formReducer,

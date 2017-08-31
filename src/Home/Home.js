@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { push } from 'react-router-redux';
 import Intro from './Intro'
 
-const Home = (props) => (
+//exporting here for testing
+export const Home = (props) => (
     <div className="app">
         <header>
             <h1><Link to="/">NeighborFoods</Link></h1>
