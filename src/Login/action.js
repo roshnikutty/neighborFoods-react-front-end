@@ -2,6 +2,8 @@ import { dispatch } from 'react-redux';
 import { push } from 'react-router-redux';
 import { getMeals } from '../Meals/action';
 
+const API_URI = process.env.REACT_APP_API_URI;
+
 export const LOGIN_STARTED = 'LOGIN_STARTED';
 export const loginStarted = () => ({
     type: LOGIN_STARTED
@@ -16,7 +18,7 @@ export const loginFinished = (token) => ({
 export const login = (data) => (dispatch) => {
     dispatch(loginStarted());
     console.log("login credentials", data)
-    fetch('http://localhost:8080/users/token', {
+    fetch(`${API_URI}/users/token`, {
         method: 'post',
         headers: {
             'Accept': 'application/json',

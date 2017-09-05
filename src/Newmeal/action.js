@@ -1,6 +1,8 @@
 import { push } from 'react-router-redux';
 import { showSnackBar } from '../App/action';
 
+const API_URI = process.env.REACT_APP_API_URI;
+
 const CREATE_MEAL_STARTED = 'CREATE_MEAL_STARTED';
 export const createMealStarted = () => ({
     type: CREATE_MEAL_STARTED
@@ -19,7 +21,7 @@ export const createMeal = (attributes) => {
         dispatch(createMealStarted())
         //GET request to the API
          let token = window.localStorage.getItem('token');
-        fetch('http://localhost:8080/meals', {
+        fetch(`${API_URI}/meals`, {
             method: 'post',
             headers: {
                 'Authorization': `JWT ${token}`,

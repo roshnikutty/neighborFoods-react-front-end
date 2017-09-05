@@ -1,6 +1,8 @@
 import { push } from 'react-router-redux';
 import { showSnackBar } from '../App/action'
 
+const API_URI = process.env.REACT_APP_API_URI;
+
 const CREATE_BUYER_STARTED = 'CREATE_BUYER_STARTED';
 export const createBuyerStarted = () => ({
     type: CREATE_BUYER_STARTED
@@ -19,7 +21,7 @@ export const createBuyer = (mealId, attributes) => {
         dispatch(createBuyerStarted())
         //POST request to the API with buyer's request
         let token = window.localStorage.getItem('token');
-        fetch('http://localhost:8080/buyers', {
+        fetch(`${API_URI}/buyers`, {
             method: 'post',
             headers: {
                 'Authorization': `JWT ${token}`,
@@ -32,7 +34,7 @@ export const createBuyer = (mealId, attributes) => {
         }).then(function (res) {
             let buyer_id = res.buyer_id;
             console.log("RESPONSE FROM POST BUYER", res);
-            fetch(`http://localhost:8080/meals/${mealId}/${buyer_id}`, {
+            fetch(`${API_URI}/meals/${mealId}/${buyer_id}`, {
                 method: 'post',
                 headers: {
                     'Authorization': `JWT ${token}`,

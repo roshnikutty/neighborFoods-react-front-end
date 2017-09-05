@@ -6,6 +6,7 @@ import {  push } from 'react-router-redux';
 import store, { history } from '../store';
 import Newmeal from '../Newmeal';
 import Newbuyer from '../Newbuyer';
+import Emptymeals from './Emptymeals';
 
 class Meals extends React.Component {
     componentWillMount() {
@@ -15,7 +16,7 @@ class Meals extends React.Component {
     render() {
         let allExistingMeals = undefined;
 
-        if (this.props.existingMeals) {
+        if (this.props.existingMeals.length > 0) {
             allExistingMeals = this.props.existingMeals.map((meal) => {
                 //converting iso 8601 date to string
                 let dString = `${meal.sell_date}`;
@@ -45,7 +46,7 @@ class Meals extends React.Component {
             })
         }
         else {
-            allExistingMeals = <li className="black-box">No Meals here!</li>
+            allExistingMeals = <li className="black-box"><Emptymeals /></li>
         }
         return (
             <div>

@@ -1,4 +1,7 @@
 import { dispatch } from 'react-redux';
+import { push } from 'react-router-redux';
+
+const API_URI = process.env.REACT_APP_API_URI;
 
 export const SIGNUP_STARTED = 'SIGNUP_STARTED';
 export const signupStarted = () => ({
@@ -14,7 +17,7 @@ export const signupFinished = (user) => ({
 export const signup = (attributes) => (dispatch) => {
     dispatch(signupStarted())
     console.log("ATTRIBUTES ", attributes);
-    fetch('http://localhost:8080/users',
+    fetch(`${API_URI}/users`,
         {
             method: 'post',
             headers: {
@@ -26,6 +29,6 @@ export const signup = (attributes) => (dispatch) => {
         }).then(
         (res) => {
             dispatch(signupFinished(res.body))
-            
+            dispatch(push('/meals'));
         }).catch(err => console.log(err));
 }
