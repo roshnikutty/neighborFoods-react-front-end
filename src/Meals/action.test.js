@@ -1,5 +1,6 @@
 import { getMealsFinished, getMeals } from './action';
 import localStorage from '../localStorageMock';
+const API_URI = process.env.REACT_APP_API_URI;
 
 describe('getMeals', () => {
     it('Should dispatch getMealsFinished', () => {
@@ -19,7 +20,7 @@ describe('getMeals', () => {
         const dispatch = jest.fn();
 
         return getMeals()(dispatch).then(() => {
-            expect(fetch).toHaveBeenCalledWith('http://localhost:8080/meals', {
+            expect(fetch).toHaveBeenCalledWith(`${API_URI}/meals`, {
                 "headers": {
                     "Authorization": "JWT asdf12345",
                     "Content-Type": "application/json"
