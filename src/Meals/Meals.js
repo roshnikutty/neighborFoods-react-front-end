@@ -31,7 +31,7 @@ class Meals extends React.Component {
                             <strong>Seller's Name</strong> {meal.seller_name} <br />
                             <strong>Dish</strong> {meal.sell_dish}<br />
                             <strong>Cuisine</strong> {meal.sell_cuisine}<br />
-                            <strong>Date</strong> {date}<br />
+                            <strong>Date of Posting</strong> {date}<br />
                         </div>
                         <div className="two-col-right">
                             <strong>Number of plates</strong> {meal.sell_plate_count}<br />
