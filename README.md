@@ -42,10 +42,11 @@ A confirmation message that the meal added will pop up.
 <ul>
   <li>React</li>
   <li>Redux</li>
+  <li><a href="https://redux-form.com/7.0.4/" target="blank">Redux Forms</a></li>
   <li>Redux Thunk</li>
   <li>Enzyme (testing)</li>
-  <li>Continuous integration and deployment with Travis CI - View the <a href = "https://travis-ci.org/roshnikutty/neighborFoods-react-front-end">Travis CI build status for this application</a>.</li>
-  <li>Material UI</li>
+  <li>Continuous integration and deployment with Travis CI - View the <a href = "https://travis-ci.org/roshnikutty/neighborFoods-react-front-end" target="blank">Travis CI build status for this application</a>.</li>
+  <li>Material Design UI - <a href="https://material.io/guidelines/components/snackbars-toasts.html" target="blank">snackbar</a></li>
   <li>JavaScript</li>
   <li>HTML5</li>
   <li>CSS</li>
@@ -55,7 +56,7 @@ A confirmation message that the meal added will pop up.
   <li>Node.js + Express.js (web server)</li>
   <li>MongoDB (database)</li>
   <li>Mocha + Chai (testing)</li>
-  <li>Continuous integration and deployment with Travis CI - View the <a href = "https://travis-ci.org/roshnikutty/neighborFoods-api">Travis CI build status for this application</a>.</li>
+  <li>Continuous integration and deployment with Travis CI - View the <a href = "https://travis-ci.org/roshnikutty/neighborFoods-api" target="blank">Travis CI build status for this application</a>.</li>
 </ul>
 <h3>Responsive</h3>
 <ul>
@@ -66,7 +67,7 @@ A confirmation message that the meal added will pop up.
 <ul>
   <li>User passwords are encrypted using bcrypt.js.</li>
   <li>
-  JWT (<a href = "https://www.npmjs.com/package/passport-jwt">JSON Web Token</a>) is the Passport strategy I used to authenticate and provide access to authorized users.</li>
+  JWT (<a href = "https://www.npmjs.com/package/passport-jwt"  target="blank">JSON Web Token</a>) is the Passport strategy I used to authenticate and provide access to authorized users.</li>
 </ul>
 
 ## Backend API routes
