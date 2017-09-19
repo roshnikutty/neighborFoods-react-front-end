@@ -1,4 +1,4 @@
-import { getMealsFinished, getMeals } from './action';
+import { getMealsFinished, getMeals, getMealsStarted } from './action';
 import localStorage from '../localStorageMock';
 const API_URI = process.env.REACT_APP_API_URI;
 
@@ -12,7 +12,7 @@ describe('getMeals', () => {
             return Promise.resolve({
                 ok: true,
                 json() {
-                    return meals;
+                    return { meals };
                 }
             });
         });
@@ -27,7 +27,9 @@ describe('getMeals', () => {
                 },
                 "method": "GET"
             });
-            expect(dispatch).toHaveBeenCalledWith(getMealsFinished(meals))
+            console.log(dispatch.mock.calls)
+            expect(dispatch.mock.calls[0][0]).toEqual(getMealsStarted())
+            expect(dispatch.mock.calls[1][0]).toEqual(getMealsFinished({meals}))
         });
     });
 });

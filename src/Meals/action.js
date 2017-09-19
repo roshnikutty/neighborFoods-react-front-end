@@ -30,7 +30,7 @@ export const getMeals = () => {
             //Do not display meals with 0 plates
             //Extracting array meals from res to filter out the array of 0 plate counts     
             let meals = res.meals;
-
+            console.log(res);
             let newMeals = meals.filter(function (meal) {
                return meal.sell_plate_count!==0 ;
             })
