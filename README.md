@@ -44,7 +44,7 @@ A confirmation message that the meal added will pop up.
   <li>Redux</li>
   <li>Redux Thunk</li>
   <li>Enzyme (testing)</li>
-  <li>Continuous integration and deployment with Travis CI - View the <a href = "https://travis-ci.org/roshnikutty/neighborFoods-react-front-end">Travis CI build status for this app</a>.</li>
+  <li>Continuous integration and deployment with Travis CI - View the <a href = "https://travis-ci.org/roshnikutty/neighborFoods-react-front-end">Travis CI build status for this application</a>.</li>
   <li>Material UI</li>
   <li>JavaScript</li>
   <li>HTML5</li>
@@ -55,11 +55,11 @@ A confirmation message that the meal added will pop up.
   <li>Node.js + Express.js (web server)</li>
   <li>MongoDB (database)</li>
   <li>Mocha + Chai (testing)</li>
-  <li>Continuous integration and deployment with Travis CI - View the <a href = "https://travis-ci.org/roshnikutty/neighborFoods-api">Travis CI build status for this app</a>.</li>
+  <li>Continuous integration and deployment with Travis CI - View the <a href = "https://travis-ci.org/roshnikutty/neighborFoods-api">Travis CI build status for this application</a>.</li>
 </ul>
 <h3>Responsive</h3>
 <ul>
-  <li>The app is built responsive for use on desktop and mobile devices.</li>
+  <li>The application is built responsive for use on desktop and mobile devices.</li>
 </ul>
 
 <h3>Security</h3>
@@ -88,7 +88,7 @@ For the buyer and seller forms, I have used redux-forms
 
 
 ## This is version 1
-In version 2 of this app, I plan to implement:
+In version 2 of this application, I plan to implement:
 * Application should send out email notification to buyer and  seller of a transaction
 
 * Backend routes for updating, deleting buyer and seller information are also coded in and tested. These will be implemented at the front-end in a later version of this application.    
