@@ -1,10 +1,10 @@
 # Neighborfoods
 
 ## Purpose and vision
-Are you a busy professional who gets home late from work, a new parent, or a busy chaperoning after you get back from work?
+Are you a busy professional who gets home late from work, a new parent, or busy chaperoning kids to soccer after you get back from work?
 Or just interested in trying various cuisines, and getting to know your neighbors?
 
-You have reached the right place! You can now buy lunch or dinner plates from your neighbors and have a home-cooked meal experience every day of your busy week!
+You have reached the right place! You can now buy lunch or dinner plates from your neighbors and have a home-cooked meal experience every day of your busy week, delivered to your place by the seller!
 
 ## Solution
 You can just browse around for what your neighbors have to offer and make your selections by choosing the number of plates.
@@ -19,20 +19,23 @@ Also, if you happen to make extra lunch or dinner and want to show off your cook
 
 
 ## Using the App
-* Logging in takes you to a page that displays the meals available for sale. Here you can see details for each meal. 
-![mealslist](https://github.com/roshnikutty/med-aid/blob/master/public/images/added_patient.png)
+* Logging in takes you to a page that displays the meals available for sale. Here you can see details for each meal. You can also post your dished by clicking the "Post your meals" button.
+![mealslist](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/meal_listing.png)
 
 
 * Clicking on the 'Buy' button will take you to a form that lets you add the buyer's information.
-'Buy meal' shows you the notification of the purchase in a snackbar pop-up at the bottom of the page.
+![buyerform](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/buyer_form.png)
 Clicking on 'Search meals' takes you back to the page with meals available for sale.
+Submitting this form pops open a notification of the purchase in a snackbar pop-up at the bottom of the page.
+![buyconfirmation](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/confirm_buy.png)
 If you enter more number of plates than is available for sale, you will be notified that there aren't as many plates, via the snackbar.
-![buyerform](https://github.com/roshnikutty/med-aid/blob/master/public/images/add_med_record_form.png)
+![buyerror](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/warning_message_buy.png)
 
-* Clicking on 'Post your dishes' takes you to the form that lets you add seller's and meal information.
-'Post your delicacy' will show you the notification that your meal has been now added for sale in a snackbar pop-up at the bottom of the page.
-![sellerform](https://github.com/roshnikutty/med-aid/blob/master/public/images/added_record.png)
-
+* Clicking on 'Post your dishes' from the meals listing page takes you to a form that lets you add seller's and meal information.
+Submitting the form will pop open the snackbar notification that your meal has been now added for sale in a snackbar pop-up at the bottom of the page.
+![sellerform](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/seller_form.png)
+A confirmation message that the meal added will pop up.
+![mealadded](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/meal_added_confirmation.png)
 
 <h2>Technology</h2>
 <h3>Front End</h3>
