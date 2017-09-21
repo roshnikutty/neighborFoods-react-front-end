@@ -27,7 +27,6 @@ describe('getMeals', () => {
                 },
                 "method": "GET"
             });
-            console.log(dispatch.mock.calls)
             expect(dispatch.mock.calls[0][0]).toEqual(getMealsStarted())
             expect(dispatch.mock.calls[1][0]).toEqual(getMealsFinished({meals}))
         });

@@ -15,7 +15,6 @@ export const createBuyerFinished = (buyer) => ({
 });
 
 export const createBuyer = (mealId, attributes) => {
-    console.log("BUYER ATTRIBUTES", attributes);
     //Thunk function
     return function (dispatch) {
         dispatch(createBuyerStarted())
@@ -29,11 +28,9 @@ export const createBuyer = (mealId, attributes) => {
             },
             body: JSON.stringify(attributes)
         }).then(res => {
-            console.log("You bought this!!");
             return res.json()
         }).then(function (res) {
             let buyer_id = res.buyer_id;
-            console.log("RESPONSE FROM POST BUYER", res);
             fetch(`${API_URI}/meals/${mealId}/${buyer_id}`, {
                 method: 'post',
                 headers: {
@@ -52,6 +49,5 @@ export const createBuyer = (mealId, attributes) => {
                 }
             })
         }).catch((err) => console.log(`ERROR in POST BUYER: ${err}`));
-        // .catch((err) => (dispatch(getMealsFailed(), err)))
     }
 };

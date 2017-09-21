@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { push } from 'react-router-redux';
-// import Login from './Login';
 import './App/app.css';
 
 
@@ -16,7 +15,6 @@ const Sessionexpired = (props) => {
             <p className="buttons-box">
                 <button className="landing-button session-button" onClick={props.gotoLogin} >Log In</button>
                 <button className="landing-button session-button" onClick={props.gotoSignup}>Sign Up</button>
-                {/*<Login />*/}
             </p>
         </div>
     );

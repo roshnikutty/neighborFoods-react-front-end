@@ -81,7 +81,6 @@ const mapStateToProps = (state) => ({
 
 
 let MealsRouter = (props)  => {
-    console.log('URL', props.match.url)
     return (
         <Switch>
             <Route

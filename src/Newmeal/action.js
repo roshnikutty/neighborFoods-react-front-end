@@ -15,7 +15,6 @@ export const createMealFinished = (meal) => ({
 });
 
 export const createMeal = (attributes) => {
-    console.log("MEAL ATTRIBUTES", attributes);
     //Thunk function
     return function (dispatch) {
         dispatch(createMealStarted())
@@ -36,6 +35,5 @@ export const createMeal = (attributes) => {
                 dispatch(push('/meals'))
                 return res
             }).catch((err) => console.log(`ERROR in POST BUYER: ${err}`));
-        // .catch((err) => (dispatch(getMealsFailed(), err)))
     }
 };
