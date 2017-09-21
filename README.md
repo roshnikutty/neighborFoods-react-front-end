@@ -42,7 +42,7 @@ A confirmation message that the meal added will pop up.
 <ul>
   <li>React</li>
   <li>Redux</li>
-  <li><a href="https://redux-form.com/7.0.4/" target="blank">Redux Forms</a></li>
+  <li><a href="https://redux-form.com/7.0.4/" target="blank">Redux Forms</a> for buyer and seller forms</li>
   <li>Redux Thunk</li>
   <li>Enzyme (testing)</li>
   <li>Continuous integration and deployment with Travis CI - View the <a href = "https://travis-ci.org/roshnikutty/neighborFoods-react-front-end" target="blank">Travis CI build status for this application</a>.</li>
@@ -83,13 +83,8 @@ A confirmation message that the meal added will pop up.
 4. POST a new buyer with buyer's contact information
     * /buyers
 
-
-## Frontend
-For the buyer and seller forms, I have used redux-forms
-
-
 ## This is version 1
 In version 2 of this application, I plan to implement:
 * Application should send out email notification to buyer and  seller of a transaction
 
-* Backend routes for updating, deleting buyer and seller information are also coded in and tested. These will be implemented at the front-end in a later version of this application.    
+* Backend routes for updating, deleting buyer and seller information are also coded in and tested. These will be implemented at the front-end in a later version of this application.   
