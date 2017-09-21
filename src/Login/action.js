@@ -17,7 +17,6 @@ export const loginFinished = (token) => ({
 
 export const login = (data) => (dispatch) => {
     dispatch(loginStarted());
-    console.log("login credentials", data)
     fetch(`${API_URI}/users/token`, {
         method: 'post',
         headers: {
@@ -29,9 +28,7 @@ export const login = (data) => (dispatch) => {
             return token.json()             //Returns a promise that will be resolved
     }
         ).then(token => {               // this should get the value from the promise above
-            console.log("TESTING TOKEN", token.token);
             window.localStorage.setItem('token', token.token);
-            console.log(localStorage.token);
             dispatch(loginFinished(token));
             dispatch(push('/meals'));
         }).catch(err => console.log(err))
