@@ -6,4 +6,16 @@ body {
     -o-background-size: cover;
     background-size: cover;
     z-index: 0;
+    min-height: 100%; /* for the content to size the page height */
+    margin:0;
+    padding:0;
+    padding-top: 0.1px; /* to start body at the top of the page and override collapsing margins */
+    position: relative; /* for positioning the footer*/
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0px; 
 }
