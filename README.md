@@ -40,8 +40,7 @@ A confirmation message that the meal added will pop up.
 ![mealadded](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/meal_added_confirmation.png)
 
 * If there are no meals to start with in the application, you will see the message saying that and you can start by adding in a meal to sell.  
-![nomeals]
-(https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/no_meals.png)
+![nomealadded](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/no_meals.png)
 
 
 <h2>Technology</h2>
