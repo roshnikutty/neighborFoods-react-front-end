@@ -19,23 +19,30 @@ Also, if you happen to make extra lunch or dinner and want to show off your cook
 
 
 ## Using the App
-* Logging in takes you to a page that displays the meals available for sale. Here you can see details for each meal. You can also post your dished by clicking the "Post your meals" button.
+* Logging in takes you to a page that displays the meals available for sale. Here you can see details for each meal. You can also post your dished by clicking the "Post your meals" button.  
 ![mealslist](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/meal_listing.png)
 
 
-* Clicking on the 'Buy' button will take you to a form that lets you add the buyer's information.
-![buyerform](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/buyer_form.png)
-Clicking on 'Search meals' takes you back to the page with meals available for sale.
-Submitting this form pops open a notification of the purchase in a snackbar pop-up at the bottom of the page.
-![buyconfirmation](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/confirm_buy.png)
-If you enter more number of plates than is available for sale, you will be notified that there aren't as many plates, via the snackbar.
-![buyerror](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/warning_message_buy.png)
+* Clicking on the 'Buy' button will take you to a form that lets you add the buyer's information.  
+![buyerform](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/buyer_form.png)  
+
+
+* Clicking on 'Search meals' takes you back to the page with meals available for sale.
+Submitting this form pops open a notification of the purchase in a snackbar pop-up at the bottom of the page.  
+![buyconfirmation](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/confirm_buy.png)  
+If you enter more number of plates than is available for sale, you will be notified that there aren't as many plates, via the snackbar.  
+![buyerror](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/warning_message_buy.png)  
 
 * Clicking on 'Post your dishes' from the meals listing page takes you to a form that lets you add seller's and meal information.
-Submitting the form will pop open the snackbar notification that your meal has been now added for sale in a snackbar pop-up at the bottom of the page.
-![sellerform](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/seller_form.png)
-A confirmation message that the meal added will pop up.
+Submitting the form will pop open the snackbar notification that your meal has been now added for sale in a snackbar pop-up at the bottom of the page.  
+![sellerform](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/seller_form.png)  
+A confirmation message that the meal added will pop up.  
 ![mealadded](https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/meal_added_confirmation.png)
+
+* If there are no meals to start with in the application, you will see the message saying that and you can start by adding in a meal to sell.  
+![nomeals]
+(https://github.com/roshnikutty/neighborFoods-react-front-end/blob/master/readme_images/no_meals.png)
+
 
 <h2>Technology</h2>
 <h3>Front End</h3>
@@ -84,7 +91,7 @@ A confirmation message that the meal added will pop up.
     * /buyers
 
 ## This is version 1
-In version 2 of this application, I plan to implement:
-* Application should send out email notification to buyer and  seller of a transaction
+In version 2 of this application, I plan to implement the following.
+* The application should send out email notification to buyer and  seller of their transactions
 
-* Backend routes for updating, deleting buyer and seller information are also coded in and tested. These will be implemented at the front-end in a later version of this application.   
+* Backend routes for updating, deleting buyer and seller information are coded in and tested in this version 1. These will be implemented at the front-end in a later version of this application.   
