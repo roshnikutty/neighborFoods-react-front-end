@@ -150,6 +150,7 @@ p.signup_button, p.login_button {
 .meal-area {
     margin: auto;
     padding: 5%;
+    list-style: none;
 }
 .meal-item {
     list-style-type: none;
