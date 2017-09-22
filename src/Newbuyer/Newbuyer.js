@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector, reset } from 'redux-form';
-import { Route, Link, Switch } from 'react-router-dom';
-import { ConnectedRouter, push } from 'react-router-redux'
-import { history } from '../store';
+import { Link } from 'react-router-dom';
+import { push } from 'react-router-redux'
+// import { history } from '../store';
 import { createBuyer } from './action';
 
 import { clearAuthToken } from '../logout';
@@ -75,10 +75,6 @@ const mapDispatchToProps = (dispatch) => ({
     }
 })
 
-const mapStateToProps = (state) => ({
-    values: selector(state, 'buyer_name', 'buy_date', 'buy_plate_count', 'buy_email_address'),
-    snackbar: state.app.snackbar
-})
 
 //Decorate with redux-form
 Newbuyer = reduxForm({
@@ -88,5 +84,10 @@ Newbuyer = reduxForm({
 
 // Decorate with connect to read form values
 const selector = formValueSelector('Newbuyerform');
+
+const mapStateToProps = (state) => ({
+    values: selector(state, 'buyer_name', 'buy_date', 'buy_plate_count', 'buy_email_address'),
+    snackbar: state.app.snackbar
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Newbuyer)

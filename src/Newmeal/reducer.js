@@ -1,5 +1,5 @@
 import { createReducer } from "redux-create-reducer";
-import * as actions from './action';
+// import * as actions from './action';
 
 const initialState = {
     meals:[]

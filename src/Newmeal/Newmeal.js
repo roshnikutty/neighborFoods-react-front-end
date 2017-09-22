@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector, reset } from 'redux-form';
-import { ConnectedRouter, push } from 'react-router-redux';
-import { Route, Link, Switch } from 'react-router-dom';
+import { push } from 'react-router-redux';
+import { Link } from 'react-router-dom';
 import { createMeal } from './action';
 import { clearAuthToken } from '../logout';
 

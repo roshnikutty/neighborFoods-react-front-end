@@ -1,4 +1,4 @@
-import { dispatch } from 'react-redux';
+// import { dispatch } from 'react-redux';
 import { push } from 'react-router-redux';
 
 const API_URI = process.env.REACT_APP_API_URI;

@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Snackbar from 'material-ui/Snackbar';
-import RaisedButton from 'material-ui/RaisedButton';
 import { hideSnackBar } from './action';
 import { history } from '../store'
 import SignUp from '../Signup';

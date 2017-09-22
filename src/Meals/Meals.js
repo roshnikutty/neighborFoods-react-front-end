@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getMeals } from './action';
 import { Route, Link, Switch } from 'react-router-dom';
 import {  push } from 'react-router-redux';
-import store, { history } from '../store';
+import store from '../store';
 import Newmeal from '../Newmeal';
 import Newbuyer from '../Newbuyer';
 import Emptymeals from './Emptymeals';
