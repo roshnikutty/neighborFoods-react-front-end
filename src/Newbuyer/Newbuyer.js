@@ -47,7 +47,7 @@ let Newbuyer = (props) => {
             <p className="logout-style-p">
                 <button className="logout-style" onClick={props.logout}>Log out</button>
             </p>
-            <form className="black-box" onSubmit={props.handleSubmit(props.createBuyer(match.params.id))} id="new-buyer-style">
+            <form className="black-box" onSubmit={handleSubmit(props.createBuyer(match.params.id))} id="new-buyer-style">
                 <p className="search-meals-button">
                     <button className="landing-button" onClick={props.searchMoreMeals}>Search meals</button>
                 </p>
@@ -56,7 +56,7 @@ let Newbuyer = (props) => {
                 <Field name="buy_plate_count" className="blank" component={renderField} type="number" label="Number of plates   *" />
                 <Field name="buy_email_address" className="blank" component={renderField} type="email" label="Email address   *" />
                 <p className="post-buy-button">
-                    <button type="submit" disabled={props.pristine || props.submitting}>Buy meal</button>
+                    <button type="submit" disabled={pristine || submitting}>Buy meal</button>
                 </p>
                 <div className="required">* is required</div>
 

@@ -93,4 +93,6 @@ A confirmation message that the meal added will pop up.
 In version 2 of this application, I plan to implement the following.
 * The application should send out email notification to buyer and  seller of their transactions
 
+* The logout button appears on with the buyer and seller forms. In version 2, I will add it on the meals listing page too.
+
 * Backend routes for updating, deleting buyer and seller information are coded in and tested in this version 1. These will be implemented at the front-end in a later version of this application.   
