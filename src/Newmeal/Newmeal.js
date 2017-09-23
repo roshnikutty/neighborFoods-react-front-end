@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm, formValueSelector, reset } from 'redux-form';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
 import { push } from 'react-router-redux';
 import { Link } from 'react-router-dom';
 import { createMeal } from './action';
@@ -50,7 +50,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
     </div>
 )
 let Newmeal = (props) => {
-    const { handleSubmit, pristine, reset, submitting, createMeal } = props;
+    const { handleSubmit, pristine, submitting } = props;
     return (
         <div>
             <h1><Link to="/">NeighborFoods</Link></h1>
