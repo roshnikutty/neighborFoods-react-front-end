@@ -4,13 +4,11 @@ cache:
   directories:
   - node_modules
 script:
-- npm test
+  - npm test
 env:
-- CI=true
+  - CI=true
 deploy:
   provider: heroku
-  api_key:
-    secure: ggTeq+iUOi2OJ8BsEkptHhVCEqeJdbIO3MlEdQkJXWgSFhqHLkMKB2m3E3UIrZwwl/p7dl8ec3E1uZPIwj/eTewRJe2Q0iw/lSGTiauCSAdyZ09wFi+yk1h/s/8utl/oKSNZF04mjpBvQg6YR1U5TwyddogBdCx/wylqWxER45EmP8vPZLRNVfhVBd6FeRGA/C2eLOFI9zzlsiUGYPfwkVJhbs8VfpQrBThi9HeWIAllnbEKe33zKLC6WztsbKt7Ps0J6lL2FefQn6L/+rzI7/nfe9cgGM6ElxQ/iyvH/Sq1lEiLb497Sw773OsRG0y6g/yb2/DuQ1X5Y8YSENgQC5QaoPLjkcY+ar0JAsM0nUjSKeCfua3B/D0/eVvCvx8p2K54kZWM7Z4CnMP2juddpdHbeANESaMrROK1ZPklaMThFJzZ4mVstJp8pG4m4APDWnZoksNjsMoc1CVho+IjcnJH9roGxkT2O507lyRjg+2DTgsz/5Jwj0Q3IJx+scMq+CZXs49ofUg9hZsGPjvp+n1G5Zb7Fz5/p+3oCjo/YVjwMNsn8zgdFh1Nod+0cOswHrQEJTg1HV4Jvb68W59rHVy6nPMZi55R4wRaCKhWAFqxPyElr6ldF8GQE/0sM/26e3n2W8IBUj01aul03SE4e1qzr5quK8j1fcpB0oLVbEk=
   app: neighborFoods-react-front-end
   on:
     repo: roshnikutty/neighborFoods-react-front-end
