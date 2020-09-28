@@ -39,17 +39,5 @@
     "setupTestFrameworkScriptFile": "./src/localStorageMock",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm install && npm install --only=dev --no-shrinkwrap && npm run build"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
