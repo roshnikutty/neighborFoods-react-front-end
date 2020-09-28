@@ -7,8 +7,3 @@ script:
   - npm test
 env:
   - CI=true
-deploy:
-  provider: heroku
-  app: neighborFoods-react-front-end
-  on:
-    repo: roshnikutty/neighborFoods-react-front-end
