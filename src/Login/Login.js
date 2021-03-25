@@ -9,7 +9,6 @@ const LogIn = (props) => {
     let username, password;
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(`INSIDE HANDLESUBMIT--- ${username.value}, ${password.value}`);
         return props.login({
             username: username.value,
             password: password.value
@@ -38,7 +37,6 @@ const LogIn = (props) => {
 }
 const mapDispatchToProps = (dispatch) => ({
     login: (attributes) => {
-        console.log("mapDispatchToProps logging out creds", attributes);
         dispatch(login(attributes));
     },
     gotoSignup: () => dispatch(push('/signup'))
